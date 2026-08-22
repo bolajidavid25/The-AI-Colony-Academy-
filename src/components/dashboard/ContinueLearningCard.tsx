@@ -1,6 +1,6 @@
 export default function ContinueLearningCard() {
   return (
-    <article className="relative overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white p-6">
+    <article className="relative overflow-hidden rounded-2xl z-0 bg-[#F1F5F9] p-6">
       <p className="text-s font-semibold tracking-wide text-[#154535] ">
         Continue Learning 
       </p>

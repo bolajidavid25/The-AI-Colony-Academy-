@@ -20,7 +20,7 @@ export default function StatCard({
   progress,
 }: StatCardProps) {
   return (
-    <article className="rounded-2xl border border-[#E2E8F0] bg-white p-5">
+    <article className="rounded-2xl bg-[#F1F5F9] p-5">
       <div className="mb-4 flex items-center gap-3">
         <div
           className={`flex h-10 w-10 items-center justify-center rounded-full text-white ${iconBg}`}

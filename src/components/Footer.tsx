@@ -1,8 +1,9 @@
 import Image from "next/image";
 
-import logo from "../assets/NavBar/logo-2.png";
-import iacetBadge from "../assets/footer-images/IACET.jpg";
-import cpdBadge from "../assets/footer-images/CPD.jpg";
+import logo from "../assets/footer-images/loggo.png";
+import iacetBadge from "../assets/footer-images/image 32.png";
+import cpdBadge from "../assets/footer-images/image 33.png";
+import badge  from "../assets/footer-images/logo.png";
 
 const courses = [
   "AI for Marketers",
@@ -68,17 +69,22 @@ export default function Footer() {
                 src={cpdBadge}
                 alt="CPD Certified"
                 width={56}
-                height={56}
-                className="h-14 w-14 rounded-full object-cover"
+                height={36}
+                className=" h-14 w-14 rounded-full object-cover"
               />
             </div>
           </div>
 
           <div>
-            <div
-              className="mb-5 h-8 w-8 rotate-12 rounded-sm bg-white/15"
-              aria-hidden="true"
-            />
+            
+            <Image
+                src={badge}
+                alt="CPD Certified"
+                width={40}
+                height={40}
+                className="h-7 w-11 rounded-full object-fill"
+              />
+              <br/><br/>
             <p className="text-[15px] font-medium text-white">
               +234 999 888-76-54
             </p>

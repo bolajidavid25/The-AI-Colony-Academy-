@@ -9,21 +9,24 @@ import LeaderboardCard from "../../components/dashboard/LeaderboardCard";
 
 export default function DashboardPage() {
   return (
-    <div className="mx-10 w-full max-w-[1500px]">
-      <DashboardGreeting />
-      <StatsRow />
+    <main className="min-h-screen w-full overflow-x-hidden bg-[#FFF]">
+      <div className="mx-auto w-full max-w-[1500px] px-6 py-6 lg:px-10">
+        <DashboardGreeting />
 
-      <section className="mb-6 grid grid-cols-1 gap-4 lg:grid-cols-[1.35fr_1fr_1fr]">
-        <ContinueLearningCard />
-        <NextLiveSessionCard />
-        <CurrentAssignmentCard />
-      </section>
+        <StatsRow />
 
-      <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-        <CertificateProgressCard />
-        <CurrentCohortCard />
-        <LeaderboardCard />
-      </section>
-    </div>
+        <section className="mb-6 grid grid-cols-1 gap-4 lg:grid-cols-[1.35fr_1fr_1fr]">
+          <ContinueLearningCard />
+          <NextLiveSessionCard />
+          <CurrentAssignmentCard />
+        </section>
+
+        <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+          <CertificateProgressCard />
+          <CurrentCohortCard />
+          <LeaderboardCard />
+        </section>
+      </div>
+    </main>
   );
 }

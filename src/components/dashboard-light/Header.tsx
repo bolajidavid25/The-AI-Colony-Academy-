@@ -5,10 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../../assets/NavBar/logo-2.png";
 import avatar from "../../assets/hero-images/Hero2.jpg";
+import { useMobileMenu } from "./MobileMenuContext";
 
 export default function Header() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const { toggle } = useMobileMenu();
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -25,17 +27,34 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 flex h-16 w-full items-center justify-between bg-[#061C19] px-5 lg:px-8">
-      {/* Logo */}
-      <Link href="/dashboard-light" className="flex items-center gap-3">
-        <Image
-          src={logo}
-          alt="The AI Colony Academy"
-          width={140}
-          height={40}
-          className="h-9 w-auto object-contain"
-          priority
-        />
-      </Link>
+      {/* Left side: Hamburger + Logo */}
+      <div className="flex items-center gap-4">
+        {/* Hamburger — mobile only */}
+        <button
+          type="button"
+          onClick={toggle}
+          aria-label="Open menu"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg  md:hidden"
+        >
+          <span className="flex flex-col items-center justify-center gap-[4px]">
+            <span className="h-[2px] w-4 rounded-full bg-[#31CA92]" />
+            <span className="h-[2px] w-4 rounded-full bg-[#31CA92]" />
+            <span className="h-[2px] w-4 rounded-full bg-[#31CA92]" />
+          </span>
+        </button>
+
+        {/* Logo */}
+        <Link href="/dashboard-light" className="flex items-center gap-3">
+          <Image
+            src={logo}
+            alt="The AI Colony Academy"
+            width={140}
+            height={40}
+            className="h-9 w-auto object-contain"
+            priority
+          />
+        </Link>
+      </div>
 
       {/* Right Side Controls */}
       <div className="relative flex items-center gap-4">

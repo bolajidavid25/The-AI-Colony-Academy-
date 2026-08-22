@@ -3,7 +3,7 @@
 export default function FixedScrollArrow() {
   function scrollToNextSection() {
     document
-      .getElementById("why-choose-us")
+      .getElementById("top-section")
       ?.scrollIntoView({ behavior: "smooth" });
   }
 

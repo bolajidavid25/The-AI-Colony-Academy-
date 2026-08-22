@@ -21,66 +21,47 @@ const initialState: ContactFormState = {
 const fieldClassName =
   "w-full rounded-lg border-0 bg-white px-4 py-3.5 text-sm text-[#0A0A0A] outline-none";
 
-const PORTRAIT_WIDTH = 372;
-const PORTRAIT_HEIGHT = 540;
-const COL_WIDTH = 123;
-const COL_GAP = 1;
-const SIDE_HEIGHT = 420;
-const SIDE_TOP = (PORTRAIT_HEIGHT - SIDE_HEIGHT) / 2;
-
 const portraitWindows = [
-  { left: 0, top: SIDE_TOP, width: COL_WIDTH, height: SIDE_HEIGHT },
   {
-    left: COL_WIDTH + COL_GAP,
-    top: 0,
-    width: COL_WIDTH,
-    height: PORTRAIT_HEIGHT,
+    leftClass: "left-0",
+    innerLeftClass: "left-0",
   },
   {
-    left: (COL_WIDTH + COL_GAP) * 2,
-    top: SIDE_TOP,
-    width: COL_WIDTH,
-    height: SIDE_HEIGHT,
+    leftClass: "left-[101px] sm:left-[141px]",
+    innerLeftClass: "left-[-101px] sm:left-[-141px]",
+  },
+  {
+    leftClass: "left-[202px] sm:left-[282px]",
+    innerLeftClass: "left-[-202px] sm:left-[-282px]",
   },
 ];
 
 function ContactPortrait() {
   return (
     <div
-      className="relative mx-auto lg:ml-auto"
-      style={{ width: PORTRAIT_WIDTH, height: PORTRAIT_HEIGHT }}
+      className="relative z-10000000 mx-auto w-[302px] h-[320px] sm:w-[422px] sm:h-[460px] lg:ml-auto"
       role="img"
       aria-label="Support representative"
     >
       {portraitWindows.map((window, index) => (
         <div
           key={index}
-          className="absolute overflow-hidden rounded-full"
-          style={{
-            left: window.left,
-            top: window.top,
-            width: window.width,
-            height: window.height,
-          }}
+          className={`absolute top-0 overflow-hidden rounded-full w-[100px] h-[320px] sm:w-[140px] sm:h-[460px] ${window.leftClass}`}
         >
           <div
-            className="absolute"
+            className={`absolute top-0 w-[302px] h-[320px] sm:w-[422px] sm:h-[460px] ${window.innerLeftClass}`}
             style={{
-              width: PORTRAIT_WIDTH,
-              height: PORTRAIT_HEIGHT,
-              left: -window.left,
-              top: -window.top,
               backgroundImage: `url(${contactImage.src})`,
               backgroundRepeat: "no-repeat",
-              backgroundSize: "300%",
-              backgroundPosition: "left 80% top -10%",
+              backgroundSize: "270%",
+              backgroundPosition: "left 78% top 10%",
             }}
           />
           <div
             className="pointer-events-none absolute inset-x-0 bottom-0 h-[28%]"
             style={{
               background:
-                "linear-gradient(to top, #002B1F 0%, rgba(0, 43, 31, 0.65) 40%, transparent 100%)",
+                "linear-gradient(to top, #002B1F 0%, rgba(0, 43, 31, 0.65) 60%, transparent 100%)",
             }}
           />
         </div>

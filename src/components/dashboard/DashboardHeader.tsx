@@ -15,7 +15,7 @@ export default function DashboardHeader() {
           alt="The AI Colony Academy"
           width={140}
           height={40}
-          className="h-9 w-auto object-contain"
+          className="h-9 w-auto ml-[30px] object-contain"
           priority
         />
       </Link>

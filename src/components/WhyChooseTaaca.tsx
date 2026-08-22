@@ -3,14 +3,6 @@ import FeatureCard from "./FeatureCard";
 
 import whyChooseBackground from "../assets/Why-Choose-TAACA/Image-1.jpg";
 
-/*
-|--------------------------------------------------------------------------
-| ICONS
-|--------------------------------------------------------------------------
-| Leave these exactly as your current icons for now.
-| We will replace/stylize icons 2, 3 and 4 separately.
-|--------------------------------------------------------------------------
-*/
 
 const iconOne = (
   <div className="flex h-[56px] w-[56px] items-center justify-center rounded-[5px] bg-[#31CA92]">

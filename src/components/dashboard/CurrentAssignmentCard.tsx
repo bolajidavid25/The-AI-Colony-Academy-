@@ -2,7 +2,7 @@ import { CalendarIcon } from "./DashboardIcons";
 
 export default function CurrentAssignmentCard() {
   return (
-    <article className="flex flex-col rounded-2xl border border-[#E2E8F0] bg-white p-5">
+    <article className="flex flex-col rounded-2xl border border-[#F1F5F9] bg-[#F1F5F9] p-5">
       <div className="mb-4 flex items-center justify-between">
         <h2 className="text-sm font-semibold text-[#0F172A]">Current Assignment</h2>
         <a href="/dashboard/assignments" className="text-xs font-semibold text-[#00B98A]">

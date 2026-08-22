@@ -8,7 +8,7 @@ export default function CertificateProgressCard() {
   const met = requirements.filter((item) => item.done).length;
 
   return (
-    <article className="flex flex-col rounded-2xl border border-[#E2E8F0] bg-white p-5">
+    <article className="flex flex-col rounded-2xl border border-[#E2E8F0] bg-[#F1F5F9] p-5">
       <h2 className="mb-4 text-sm font-semibold text-[#0F172A]">Certificate</h2>
 
       <div className="mb-4 flex text-[#E2E8F0]" aria-hidden="true">

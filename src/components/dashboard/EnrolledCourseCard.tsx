@@ -23,7 +23,7 @@ export default function EnrolledCourseCard({
         : "text-[#94A3B8]";
 
   return (
-    <article className="overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white">
+    <article className="overflow-hidden rounded-2xl border border-[#F1F5F9] bg-white">
       <div className="relative h-36 w-full">
         <Image src={image} alt="" fill className="object-cover" sizes="400px" />
       </div>

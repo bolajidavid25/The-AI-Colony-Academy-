@@ -19,7 +19,7 @@ export default function AssignmentRow({
         : "text-[#00B98A]";
 
   return (
-    <article className="flex flex-col gap-4 rounded-2xl border border-[#E2E8F0] bg-white p-5 sm:flex-row sm:items-center sm:justify-between">
+    <article className="flex flex-col gap-4 rounded-2xl bg-[#E2E8F0] p-5 sm:flex-row sm:items-center sm:justify-between">
       <div>
         <h2 className="text-base font-bold text-[#0F172A]">{title}</h2>
         <p className="mt-1 text-sm text-[#64748B]">{course}</p>
