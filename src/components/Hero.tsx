@@ -77,14 +77,14 @@ export default function Hero() {
 
       {/* Main hero content */}
       <div className="relative z-20 mx-auto flex min-h-[600px] w-full max-w-[850px] flex-col items-center justify-center px-6 pb-[60px] pt-[90px] text-center md:min-h-[720px] md:pb-[80px] md:pt-[120px]">
-        <h1 className="max-w-[300px] text-[30px] font-bold leading-[1.1] tracking-[-1px] text-[#F5F8F6] sm:max-w-[420px] sm:text-[38px] md:max-w-[700px] md:text-[48px] md:tracking-[-2px] lg:text-[62px]">
-          Fully Funded AI
-          <br />
-          Scholarships. Start
-          <br />
-          Learning{" "}
-          <span className="text-[#31CA92]">Today.</span>
-        </h1>
+        <h1 className="max-w-[340px] text-[38px] font-bold leading-[1.1] tracking-[-1px] text-[#F5F8F6] sm:max-w-[480px] sm:text-[46px] md:max-w-[700px] md:text-[54px] md:tracking-[-2px] lg:text-[68px]">
+            Fully Funded AI
+            <br />
+            Scholarships. Start
+            <br />
+              Learning{" "}
+                        <span className="text-[#31CA92]">Today.</span>
+          </h1>
 
         <div className="mt-[28px] flex flex-wrap items-center justify-center gap-[12px] md:mt-[38px] md:gap-[14px]">
           <button
