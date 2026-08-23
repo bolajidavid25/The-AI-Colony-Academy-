@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 
 import timecampLogo from "../assets/trusted-section/timestamp.jpg";
 import remoteLogo from "../assets/trusted-section/senville.jpg";
@@ -7,7 +7,12 @@ import dropboxLogo from "../assets/trusted-section/dropbox.jpg";
 import netflixLogo from "../assets/trusted-section/netflix.jpg";
 import envatoLogo from "../assets/trusted-section/envato.jpg";
 
-const partners = [
+interface Partner {
+  name: string;
+  logo: StaticImageData;
+}
+
+const partners: Partner[] = [
   { name: "Timecamp", logo: timecampLogo },
   { name: "Remote", logo: remoteLogo },
   { name: "Google", logo: googleLogo },
@@ -16,24 +21,31 @@ const partners = [
   { name: "Envato", logo: envatoLogo },
 ];
 
+// Tripled so the loop resets at -33.333% instead of -50% —
+// with more copies on screen at once, the seam is far less noticeable
+const marqueeLogos: Partner[] = [...partners, ...partners, ...partners];
+
 export default function PartnerLogos() {
   return (
     <section
       aria-label="Trusted partners"
-      className="w-full border-y border-black/5 bg-white px-6 py-10 lg:px-8"
+      className="w-full overflow-hidden border-y border-black/5 bg-white py-10"
     >
-      <div className="mx-auto w-full max-w-[1260px]">
-        <ul className="grid grid-cols-2 items-center gap-x-8 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
-          {partners.map((partner) => (
-            <li key={partner.name} className="flex justify-center">
+      <div className="group relative mx-auto w-full max-w-[1260px]">
+        <div className="flex w-max animate-marquee gap-10 group-hover:[animation-play-state:paused] sm:gap-16">
+          {marqueeLogos.map((partner, i) => (
+            <div
+              key={`${partner.name}-${i}`}
+              className="flex h-8 w-[90px] shrink-0 items-center justify-center sm:w-[110px]"
+            >
               <Image
                 src={partner.logo}
                 alt={partner.name}
                 className="h-auto max-h-8 w-auto max-w-[110px] object-contain opacity-60 grayscale transition-opacity hover:opacity-80"
               />
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );
