@@ -7,7 +7,7 @@ import AssignmentsList from "../../components/dashboard-light/AssignmentsList";
 
 export default function DashboardLightPage() {
   return (
-    <div className="mx-auto w-full max-w-[1600px] animate-in fade-in duration-300">
+    <div className=" mx-auto w-full max-w-[1600px] animate-in fade-in duration-300 ">
       {/* Welcome Greeting */}
       <div className="mb-6">
         <h1 className="text-[28px] font-bold tracking-[-0.6px] text-[#0F172A]">

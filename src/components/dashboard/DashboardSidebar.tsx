@@ -67,7 +67,7 @@ export default function DashboardSidebar() {
 
       {/* Sidebar / drawer */}
       <aside
-        className={`fixed top-[-10px] left-0 z-50 h-screen w-[232px] shrink-0 overflow-hidden bg-[#F1F5F9] px-3 py-6 transition-transform duration-300 ease-in-out
+        className={`fixed top-10px left-0 z-50 h-screen w-[232px] shrink-0 overflow-hidden bg-[#F1F5F9] px-3 py-6 transition-transform duration-300 ease-in-out
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
           md:translate-x-0`}
       >
