@@ -29,7 +29,7 @@ export default function ApplicationOverview() {
   let accumulatedPercentage = 0;
 
   return (
-    <article className="flex flex-col rounded-2xl border border-[#E2E8F0] bg-white p-5 h-full">
+    <article className="flex flex-col rounded-2xl  bg-[#F1F5F9] p-5 h-full">
       <div className="mb-6 flex items-center justify-between">
         <h3 className="text-base font-bold text-[#0F172A]">Application Overview</h3>
         <Link
