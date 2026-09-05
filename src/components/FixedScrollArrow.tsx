@@ -12,7 +12,7 @@ export default function FixedScrollArrow() {
       type="button"
       aria-label="Scroll to next section"
       onClick={scrollToNextSection}
-      className="fixed right-[7%] bottom-50 z-[100] flex h-[52px] w-[52px] items-center justify-center rounded-[10px] bg-[#31CA92] text-white shadow-[0_8px_28px_rgba(49,202,146,0.35)] transition-transform hover:scale-[1.03]"
+      className="fixed right-[7%] bottom-10 z-[100] flex h-[52px] w-[52px] items-center justify-center rounded-[10px] bg-[#31CA92] text-white shadow-[0_8px_28px_rgba(49,202,146,0.35)] transition-transform hover:scale-[1.03]"
     >
       <svg
         width="28"

@@ -53,7 +53,7 @@ export default function AvailableCourses() {
     <section
       id="courses"
       aria-labelledby="available-courses-heading"
-      className="w-full bg-white px-6 py-20 lg:px-8 lg:py-24"
+      className="w-full bg-white px-6 py-20 lg:px-8 lg:py-24 mt-[-130]"
     >
       <div className="mx-auto w-full max-w-[1260px]">
         <header className="mb-12 text-center">

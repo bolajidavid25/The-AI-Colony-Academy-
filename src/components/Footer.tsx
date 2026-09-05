@@ -40,14 +40,14 @@ export default function Footer() {
       />
 
       <div className="relative z-10 mx-auto w-[90%]">
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
-          <div>
+        <div className="grid grid-cols-1 gap-8 text-center sm:grid-cols-2 sm:gap-12 lg:grid-cols-4 lg:gap-10 lg:text-left">
+          <div className="order-4 flex flex-col items-center lg:order-none lg:items-start">
             <Image
               src={logo}
               alt="The AI Colony Academy"
               width={140}
               height={62}
-              className="h-auto w-[140px] object-contain"
+              className="h-auto w-[110px] object-contain lg:w-[140px]"
             />
             <p className="mt-5 text-[13px] leading-relaxed text-white/70">
               2972 Westheimer Rd. Somewhere
@@ -75,7 +75,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="order-3 flex flex-col items-center lg:order-none lg:items-start">
             
             <Image
                 src={badge}
@@ -84,7 +84,7 @@ export default function Footer() {
                 height={40}
                 className="h-7 w-11 rounded-full object-fill"
               />
-              <br/><br/>
+            <div className="mt-8">
             <p className="text-[15px] font-medium text-white">
               +234 999 888-76-54
             </p>
@@ -94,7 +94,7 @@ export default function Footer() {
             >
               hello@theaicolonyacademy.com
             </a>
-            <div className="mt-5 flex items-center gap-3">
+            <div className="mt-5 flex items-center justify-center gap-3">
               <a
                 href="#"
                 aria-label="WhatsApp"
@@ -127,9 +127,10 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
+            </div>
           </div>
 
-          <div className="lg:text-right">
+          <div className="order-1 lg:order-none lg:text-right">
             <h3 className="mb-4 text-[13px] font-medium text-white/40">
               Courses
             </h3>
@@ -147,7 +148,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-8 lg:text-right">
+          <div className="order-2 space-y-8 lg:order-none lg:text-right">
             <div>
               <h3 className="mb-4 text-[13px] font-medium text-white/40">
                 Quick links:
@@ -185,9 +186,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-[12px] text-white/35 sm:flex-row">
-          <p>© 2026 — Copyright</p>
+        <div className="mt-24 flex flex-col items-center gap-8 text-[10px] text-white/35 sm:flex-row-reverse sm:justify-between sm:gap-3">
           <p>The AI Colony Academy</p>
+          <p>© 2026 — Copyright</p>
         </div>
       </div>
     </footer>
