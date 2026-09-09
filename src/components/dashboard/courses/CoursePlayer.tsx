@@ -73,8 +73,8 @@ export default function CoursePlayer({ course, onBack }: CoursePlayerProps) {
                 <span>Module 4</span>
                 <span>70% Complete</span>
               </div>
-              <div className="h-1.5 overflow-hidden rounded-full bg-white/30">
-                <div className="h-full w-[70%] rounded-full bg-[#31CA92] shadow-[10px_10px_10px_#31CA92]" />
+              <div className="h-1.5 rounded-full bg-white/30">
+                    <div className="h-full w-[70%] rounded-full bg-[#31CA92] shadow-[0_0_10px_#31CA92]" />
               </div>
             </div>
           </div>
