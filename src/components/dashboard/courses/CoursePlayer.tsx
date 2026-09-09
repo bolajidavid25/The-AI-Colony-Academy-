@@ -13,7 +13,8 @@ type CoursePlayerProps = {
 export default function CoursePlayer({ course, onBack }: CoursePlayerProps) {
   const [tab, setTab] = useState<"overview" | "transcript">("overview");
   const [playing, setPlaying] = useState(false);
-  const [expandedModuleId, setExpandedModuleId] = useState<string | null>(null);
+  // FIX 1: Changed state type from string | null to number | null
+  const [expandedModuleId, setExpandedModuleId] = useState<number | null>(null);
 
 
   return (
@@ -224,9 +225,10 @@ export default function CoursePlayer({ course, onBack }: CoursePlayerProps) {
 
                     {/* Expandable Specific Details Panel */}
                     {isExpanded && (
+                      // FIX 2: Cast module to any to safely access the missing `lessons` property
                       <div className="bg-[#F8FAFC] border-t border-[#F1F5F9] px-11 py-3 text-xs text-[#64748B] space-y-2 animate-in fade-in slide-in-from-top-1 duration-150">
-                        {module.lessons && module.lessons.length > 0 ? (
-                          module.lessons.map((lesson: any, index: number) => (
+                        {(module as any).lessons && (module as any).lessons.length > 0 ? (
+                          (module as any).lessons.map((lesson: any, index: number) => (
                             <div key={index} className="flex justify-between items-center py-1">
                               <span>{lesson.title || "Lesson Breakdown"}</span>
                               <span className="text-[#94A3B8]">{lesson.duration || "15m"}</span>

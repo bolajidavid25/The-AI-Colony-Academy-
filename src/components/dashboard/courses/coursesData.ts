@@ -40,25 +40,31 @@ export const instructor = {
   photo: instructorPhoto,
   bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
 };
-
+interface Lesson {
+  id:number;
+  title:string;
+}
 export const modules = [
   {
     id: 1,
     title: "1. Introduction to the creator economy",
     status: "complete" as const,
     detail: "Complete",
+    lessons: Lesson[]
   },
   {
     id: 2,
     title: "2. Introduction to the creator economy",
     status: "in-progress" as const,
     detail: "In Progress - 25m left",
+    lessons: Lesson[]
   },
   {
     id: 3,
     title: "3. Introduction to the creator economy",
     status: "locked" as const,
     detail: "Locked",
+    lessons: Lesson[]
   },
 ];
 

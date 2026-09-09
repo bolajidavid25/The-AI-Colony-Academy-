@@ -2,7 +2,7 @@ export default function RobotMascot() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="pt-30 transform translate-y-27"
+      className="pt-30 transform translate-y-27"
       width="176"
       height="400"
       viewBox="0 0 176 241"
