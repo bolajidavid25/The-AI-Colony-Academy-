@@ -74,14 +74,14 @@ export default function CoursePlayer({ course, onBack }: CoursePlayerProps) {
                 <span>70% Complete</span>
               </div>
               <div className="h-1.5 overflow-hidden rounded-full bg-white/30">
-                <div className="h-full w-[70%] rounded-full bg-[#31CA92]" />
+                <div className="h-full w-[70%] rounded-full bg-[#31CA92] shadow-[10px_10px_10px_#31CA92]" />
               </div>
             </div>
           </div>
 
                     <div className="mt-4 flex flex-wrap gap-2">
             {/* Intermediate Badge */}
-            <span className="inline-flex items-center gap-1.5 rounded-lg bg-[#F1F5F9] px-3 py-1.5 text-xs font-medium text-[#64748B]">
+            <span className="inline-flex items-center gap-1.5 rounded-sm bg-[#FFF] px-3 py-1.5 text-xs font-medium text-[#A0A5B0]">
               <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="h-3.5 w-3.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v5.25c0 .621-.504 1.125-1.125 1.125h-2.25A1.125 1.125 0 0 1 3 18.375v-5.25ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125v-9.75ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v14.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
               </svg>
@@ -89,7 +89,7 @@ export default function CoursePlayer({ course, onBack }: CoursePlayerProps) {
             </span>
 
             {/* Time Frame Badge */}
-            <span className="inline-flex items-center gap-1.5 rounded-lg bg-[#F1F5F9] px-3 py-1.5 text-xs font-medium text-[#64748B]">
+            <span className="inline-flex items-center gap-1.5 rounded-sm bg-[#FFF] px-3 py-1.5 text-xs font-medium text-[#A0A5B0]">
               <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="h-3.5 w-3.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
               </svg>
@@ -97,7 +97,7 @@ export default function CoursePlayer({ course, onBack }: CoursePlayerProps) {
             </span>
 
             {/* Certificate Badge */}
-            <span className="inline-flex items-center gap-1.5 rounded-lg bg-[#F1F5F9] px-3 py-1.5 text-xs font-medium text-[#64748B] border border-[#64748A]">
+            <span className="inline-flex items-center gap-1.5 rounded-sm bg-[#FFF] px-3 py-1.5 text-xs font-medium text-[#A0A5B0] border border-[#64748A]">
               <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="h-3.5 w-3.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.504-1.125-1.125-1.125h-6.75a1.125 1.125 0 0 0-1.125 1.125v3.375m9 0ZM9 10.5h.008v.008H9V10.5Zm6 0h.008v.008H15V10.5Zm-6 3h.008v.008H9v-.008Zm6 0h.008v.008H15v-.008ZM6.75 22.5V4.125c0-.621.504-1.125 1.125-1.125h8.25c.621 0 1.125.504 1.125 1.125V22.5" />
               </svg>
@@ -111,9 +111,9 @@ export default function CoursePlayer({ course, onBack }: CoursePlayerProps) {
               <button
                 type="button"
                 onClick={() => setTab("overview")}
-                className={`rounded-t-lg px-4 py-2 text-sm font-semibold ${
+                className={`rounded-t-sm px-4 py-2 text-sm font-semibold ${
                   tab === "overview"
-                    ? "bg-[#D1FAE5] text-[#154535]"
+                    ? "bg-[#D1FAE5] text-[#154535] border-b-3 border-[#31CA92]"
                     : "text-[#64748B]"
                 }`}
               >
@@ -122,9 +122,9 @@ export default function CoursePlayer({ course, onBack }: CoursePlayerProps) {
               <button
                 type="button"
                 onClick={() => setTab("transcript")}
-                className={`rounded-t-lg px-4 py-2 text-sm font-semibold ${
+                className={`rounded-t-sm px-4 py-2 text-sm font-semibold ${
                   tab === "transcript"
-                    ? "bg-[#D1FAE5] text-[#154535]"
+                    ? "bg-[#D1FAE5] text-[#154535] border-b-3 border-[#31CA92]"
                     : "text-[#64748B]"
                 }`}
               >
@@ -138,7 +138,7 @@ export default function CoursePlayer({ course, onBack }: CoursePlayerProps) {
                   <h2 className="text-base font-bold text-[#154535]">
                     About this Lesson
                   </h2>
-                  <p className="mt-3 text-sm leading-6 text-[#64748B]">
+                  <p className="mt-3 text-sm leading-6 text-[#154535C7]">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                   </p>
 
@@ -186,17 +186,17 @@ export default function CoursePlayer({ course, onBack }: CoursePlayerProps) {
                 const isExpanded = expandedModuleId === module.id;
                 
                 return (
-                  <li key={module.id} className="border-t border-[#F1F5F9]">
+                  <li key={module.id} className="border-t border-[#F1F5F9] ">
                     {/* Clickable header row */}
                     <button
                       type="button"
                       onClick={() => setExpandedModuleId(isExpanded ? null : module.id)}
-                      className="flex w-full items-center justify-between px-4 py-3 text-left hover:bg-[#F8FAFC]"
+                      className="flex w-full items-center justify-between px-4 py-3 text-left bg-[#FFF] hover:bg-[#F8FAFC]"
                     >
-                      <div className="flex items-start gap-3">
+                      <div className="flex items-start gap-3 bg-[#FFF]">
                         <ModuleStatusIcon status={module.status} />
                         <div>
-                          <p className="text-sm font-semibold text-[#0F172A]">
+                          <p className="text-sm font-semibold text-[#154535] bg-white">
                             {module.title}
                           </p>
                           <p className="mt-0.5 text-xs text-[#94A3B8]">{module.detail}</p>
@@ -248,8 +248,8 @@ export default function CoursePlayer({ course, onBack }: CoursePlayerProps) {
 
 
 
-          <section className="rounded-2xl border border-[#E2E8F0] bg-white p-4">
-            <h2 className="text-sm font-bold text-[#154535]">Instructor</h2>
+          <section className="rounded-2xl border border-[#E2E8F0] bg-[#F9F9F9] p-4">
+              <h2 className="text-lg font-bold text-[#154535] bg-[#FFF]">Instructor</h2>
             <div className="mt-4 flex items-center gap-3">
               <Image
                 src={instructor.photo}
