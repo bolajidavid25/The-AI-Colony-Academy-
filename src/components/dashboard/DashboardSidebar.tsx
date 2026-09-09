@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import {
   AnnouncementIcon,
@@ -67,7 +68,7 @@ export default function DashboardSidebar() {
 
       {/* Sidebar / drawer */}
       <aside
-        className={`fixed top-10px left-0 z-50 h-screen w-[232px] shrink-0 overflow-hidden bg-[#F1F5F9] px-3 py-6 transition-transform duration-300 ease-in-out
+        className={`fixed top-16 left-0 z-50 h-[calc(100vh-64px)] w-[232px] shrink-0 overflow-hidden bg-[#F1F5F9] px-3 py-6 transition-transform duration-300 ease-in-out
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
           md:translate-x-0`}
       >
@@ -91,7 +92,8 @@ export default function DashboardSidebar() {
                 : pathname === item.href || pathname.startsWith(`${item.href}/`);
 
             return (
-              <div
+              <Link
+                href={item.href}
                 key={item.href}
                 className={`relative flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium select-none ${
                   isActive ? "bg-[#DCFCE7] text-[#166534]" : "text-[#475569]"
@@ -102,7 +104,7 @@ export default function DashboardSidebar() {
                 )}
                 <Icon />
                 {item.label}
-              </div>
+              </Link>
             );
           })}
         </nav>
