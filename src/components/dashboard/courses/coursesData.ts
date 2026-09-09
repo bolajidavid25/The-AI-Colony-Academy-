@@ -40,7 +40,7 @@ export const instructor = {
   photo: instructorPhoto,
   bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
 };
-interface Lesson {
+export type Lesson = {
   id:number;
   title:string;
 }
@@ -50,21 +50,30 @@ export const modules = [
     title: "1. Introduction to the creator economy",
     status: "complete" as const,
     detail: "Complete",
-    lessons: Lesson[]
+    lessons: [
+            { title: "Welcome", duration: "5m" },
+            { title: "The Basics", duration: "15m" }
+    ]
   },
   {
     id: 2,
     title: "2. Introduction to the creator economy",
     status: "in-progress" as const,
     detail: "In Progress - 25m left",
-    lessons: Lesson[]
+    lessons:[
+      { title: "Welcome", duration: "5m" },
+      { title: "The Basics", duration: "15m" }
+    ]
   },
   {
     id: 3,
     title: "3. Introduction to the creator economy",
     status: "locked" as const,
     detail: "Locked",
-    lessons: Lesson[]
+    lessons: [
+      { title: "Welcome", duration: "5m" },
+      { title: "The Basics", duration: "15m" }
+    ]
   },
 ];
 
