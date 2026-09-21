@@ -9,12 +9,12 @@ interface InfoRowProps {
 
 function InfoRow({ label, value, isTag }: InfoRowProps) {
   return (
-    <div className="flex items-center justify-between border-b border-[#F1F5F9] py-3 last:border-0">
-      <span className="text-sm text-[#64748B]">{label}</span>
+    <div className="flex items-center justify-between py-3">
+      <span className="text-sm font-semibold" style={{ color: "#154535" }}>{label}</span>
       {isTag ? (
         value
       ) : (
-        <span className="text-sm font-medium text-[#0F172A] text-right">{value}</span>
+        <span className="text-sm font-medium text-right" style={{ color: "#A0A5B0" }}>{value}</span>
       )}
     </div>
   );
@@ -26,10 +26,10 @@ interface ApplicantInfoCardProps {
 
 export default function ApplicantInfoCard({ status }: ApplicantInfoCardProps) {
   return (
-    <div className="rounded-2xl border border-[#E2E8F0] bg-white p-6 shadow-sm">
+    <div className="rounded-2xl p-6 border-0 shadow-none" style={{ backgroundColor: "#F9F9F9" }}>
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="font-semibold text-[#0F172A]">Applicant Info</h2>
-        <span className="text-xs text-[#94A3B8]">#tacca-2026-123</span>
+        <h2 className="text-base font-bold" style={{ color: "#154535" }}>Applicant Info</h2>
+        <span className="text-xs font-bold" style={{ color: "#154535" }}>#tacca-2026-123</span>
       </div>
 
       <InfoRow label="Name" value="Jonathan Cooper" />
@@ -44,7 +44,10 @@ export default function ApplicantInfoCard({ status }: ApplicantInfoCardProps) {
         label="Has Prior tech experience"
         isTag
         value={
-          <span className="inline-flex items-center rounded-full bg-[#DCFCE7] px-2.5 py-0.5 text-xs font-medium text-[#15803D]">
+          <span
+            className="inline-flex items-center rounded-full px-3 py-1 text-xs font-bold"
+            style={{ color: "#31CA92", backgroundColor: "#8FF9D145" }}
+          >
             Yes
           </span>
         }
@@ -53,7 +56,10 @@ export default function ApplicantInfoCard({ status }: ApplicantInfoCardProps) {
         label="Agreed to terms"
         isTag
         value={
-          <span className="inline-flex items-center rounded-full bg-[#DCFCE7] px-2.5 py-0.5 text-xs font-medium text-[#15803D]">
+          <span
+            className="inline-flex items-center rounded-full px-3 py-1 text-xs font-bold"
+            style={{ color: "#31CA92", backgroundColor: "#8FF9D145" }}
+          >
             Yes
           </span>
         }

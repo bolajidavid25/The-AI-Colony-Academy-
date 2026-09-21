@@ -115,13 +115,21 @@ export function ExternalLinkIcon({ className = "h-4 w-4" }: { className?: string
   );
 }
 
+{/* Accept Icon matching media_1790015824524.png: Circle with checkmark */}
 export function AcceptIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" className={className}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" className={className}>
       <path
-        d="M2.66699 8.66663L5.33366 11.3333L13.3337 3.33337"
+        d="M17.5 9.58333V10A7.5 7.5 0 1 1 13.0583 3.14167"
         stroke="currentColor"
-        strokeWidth="1.5"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M17.5 3.75L10 11.2583L7.5 8.75833"
+        stroke="currentColor"
+        strokeWidth="1.8"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -129,14 +137,30 @@ export function AcceptIcon({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
+{/* Waitlist Icon matching media_1790015846670.png: User outline with menu lines */}
 export function WaitlistIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" className={className}>
-      <circle cx="8" cy="8" r="5.5" stroke="currentColor" strokeWidth="1.3" />
-      <path
-        d="M8 5.33337V8.00004L9.33333 9.33337"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" className={className}>
+      <circle
+        cx="7.5"
+        cy="6.66667"
+        r="3.33333"
         stroke="currentColor"
-        strokeWidth="1.3"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M2.5 16.6667C2.5 13.9052 4.73858 11.6667 7.5 11.6667C10.2614 11.6667 12.5 13.9052 12.5 16.6667"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14.167 6.66667H17.5M14.167 10H17.5M15.833 13.3333H17.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -144,11 +168,48 @@ export function WaitlistIcon({ className = "h-4 w-4" }: { className?: string }) 
   );
 }
 
+{/* Reject Icon matching media_1790015889094.png: Archive / ballot box with 'X' */}
 export function RejectIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" className={className}>
-      <path d="M10 6L6 10M6 6L10 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="8" cy="8" r="5.5" stroke="currentColor" strokeWidth="1.3" />
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" className={className}>
+      <rect
+        x="3"
+        y="3"
+        width="14"
+        height="3"
+        rx="1.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      />
+      <path
+        d="M4.5 6V15C4.5 15.8284 5.17157 16.5 6 16.5H14C14.8284 16.5 15.5 15.8284 15.5 15V6"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8 9.5L12 13.5M12 9.5L8 13.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+{/* Close Circle Icon matching media_1790015998624.png: Circle with 'X' */}
+export function CloseCircleIcon({ className = "h-5 w-5" }: { className?: string }) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" className={className}>
+      <circle cx="10" cy="10" r="8" stroke="currentColor" strokeWidth="1.8" />
+      <path
+        d="M7.5 7.5L12.5 12.5M12.5 7.5L7.5 12.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
