@@ -165,7 +165,7 @@ export default function Sidebar() {
 
       {/* Sidebar / drawer */}
         <aside
-               className={`fixed top-[60px] left-0 z-50 h-screen w-[240px] shrink-0 overflow-hidden bg-[#061C19] px-3 py-6 transition-transform duration-300 ease-in-out
+               className={`fixed top-[80px] left-0 z-50 h-screen w-[240px] shrink-0 overflow-hidden bg-[#061C19] px-3 py-6 transition-transform duration-300 ease-in-out
             ${isOpen ? "translate-x-0" : "-translate-x-full"}
           md:translate-x-0`}
                   >         

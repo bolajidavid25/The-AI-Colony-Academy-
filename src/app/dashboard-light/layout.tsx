@@ -15,14 +15,14 @@ export default function DashboardLightLayout({
 }>) {
   return (
     <MobileMenuProvider>
-      <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A]">
+      <div className="min-h-screen bg-white text-[#0F172A]">
         <Header />
 
-        <div className="flex min-h-[calc(100vh-64px)]">
+        <div className="flex min-h-[calc(100vh-80px)]">
           <Sidebar />
 
           {/* Main Content Area — md:ml-[240px] offsets the fixed sidebar's width so content isn't hidden underneath it */}
-          <main className="min-w-0 flex-1 bg-[#F8FAFC] px-5 py-6 md:ml-[240px] lg:px-8 lg:py-8">
+          <main className="min-w-0 flex-1 bg-white px-5 py-6 md:ml-[240px] lg:px-8 lg:py-8">
             {children}
           </main>
         </div>

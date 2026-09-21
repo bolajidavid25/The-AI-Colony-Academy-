@@ -26,7 +26,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 flex h-16 w-full items-center justify-between bg-[#061C19] px-5 lg:px-8">
+    <header className="sticky top-0 z-40 flex h-20 w-full items-center justify-between bg-[#061C19] px-8 py-4 lg:px-12">
       {/* Left side: Hamburger + Logo */}
       <div className="flex items-center gap-4">
         {/* Hamburger — mobile only */}

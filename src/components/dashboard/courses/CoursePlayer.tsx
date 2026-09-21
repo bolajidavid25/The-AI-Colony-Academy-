@@ -13,7 +13,6 @@ type CoursePlayerProps = {
 export default function CoursePlayer({ course, onBack }: CoursePlayerProps) {
   const [tab, setTab] = useState<"overview" | "transcript">("overview");
   const [playing, setPlaying] = useState(false);
-  // FIX 1: Changed state type from string | null to number | null
   const [expandedModuleId, setExpandedModuleId] = useState<number | null>(null);
 
 
@@ -27,7 +26,6 @@ export default function CoursePlayer({ course, onBack }: CoursePlayerProps) {
           </h1>
         </div>
         
-{/* Change made here: Removed the fixed margin and added responsive layout utility */}
         <div className="flex items-center justify-end xl:justify-end">
 
         <button
@@ -80,7 +78,7 @@ export default function CoursePlayer({ course, onBack }: CoursePlayerProps) {
           </div>
 
                     <div className="mt-4 flex flex-wrap gap-2">
-            {/* Intermediate Badge */}
+           
             <span className="inline-flex items-center gap-1.5 rounded-sm bg-[#FFF] px-3 py-1.5 text-xs font-medium text-[#A0A5B0]">
               <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="h-3.5 w-3.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v5.25c0 .621-.504 1.125-1.125 1.125h-2.25A1.125 1.125 0 0 1 3 18.375v-5.25ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125v-9.75ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v14.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
@@ -88,7 +86,6 @@ export default function CoursePlayer({ course, onBack }: CoursePlayerProps) {
               Intermediate
             </span>
 
-            {/* Time Frame Badge */}
             <span className="inline-flex items-center gap-1.5 rounded-sm bg-[#FFF] px-3 py-1.5 text-xs font-medium text-[#A0A5B0]">
               <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="h-3.5 w-3.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
@@ -96,7 +93,6 @@ export default function CoursePlayer({ course, onBack }: CoursePlayerProps) {
               8 Weeks
             </span>
 
-            {/* Certificate Badge */}
             <span className="inline-flex items-center gap-1.5 rounded-sm bg-[#FFF] px-3 py-1.5 text-xs font-medium text-[#A0A5B0] border border-[#64748A]">
               <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="h-3.5 w-3.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.504-1.125-1.125-1.125h-6.75a1.125 1.125 0 0 0-1.125 1.125v3.375m9 0ZM9 10.5h.008v.008H9V10.5Zm6 0h.008v.008H15V10.5Zm-6 3h.008v.008H9v-.008Zm6 0h.008v.008H15v-.008ZM6.75 22.5V4.125c0-.621.504-1.125 1.125-1.125h8.25c.621 0 1.125.504 1.125 1.125V22.5" />
