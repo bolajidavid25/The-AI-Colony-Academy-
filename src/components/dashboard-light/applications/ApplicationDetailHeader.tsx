@@ -17,12 +17,14 @@ import { Status } from "./applicationsData";
 interface ApplicationDetailHeaderProps {
   status: Status;
   onStatusChange: (status: Status) => void;
+  onRequestAction?: (action: "accept" | "waitlist" | "reject") => void;
   backUrl?: string;
 }
 
 export default function ApplicationDetailHeader({
   status,
   onStatusChange,
+  onRequestAction,
   backUrl = "/dashboard-light/applications",
 }: ApplicationDetailHeaderProps) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -92,7 +94,7 @@ export default function ApplicationDetailHeader({
             </button>
 
             {isDropdownOpen && (
-              <div className="absolute right-0 top-full z-50 mt-2 w-56 rounded-2xl border-0 bg-white p-3 pt-5 shadow-xl animate-in fade-in zoom-in-95 duration-150">
+              <div className="absolute right-0 top-full z-40 mt-2 w-56 rounded-2xl border-0 bg-white p-3 pt-5 shadow-xl animate-in fade-in zoom-in-95 duration-150">
                 {/* Close Button placed precisely at the top right matching media_1790016694840.png */}
                 <button
                   type="button"
@@ -109,7 +111,11 @@ export default function ApplicationDetailHeader({
                   <button
                     type="button"
                     onClick={() => {
-                      onStatusChange("Approved");
+                      if (onRequestAction) {
+                        onRequestAction("accept");
+                      } else {
+                        onStatusChange("Approved");
+                      }
                       setIsDropdownOpen(false);
                     }}
                     className="flex w-full items-center gap-3 rounded-lg px-2 py-2 text-sm font-bold hover:bg-[#F8FAFC] transition-colors cursor-pointer"
@@ -125,7 +131,11 @@ export default function ApplicationDetailHeader({
                   <button
                     type="button"
                     onClick={() => {
-                      onStatusChange("Waitlisted");
+                      if (onRequestAction) {
+                        onRequestAction("waitlist");
+                      } else {
+                        onStatusChange("Waitlisted");
+                      }
                       setIsDropdownOpen(false);
                     }}
                     className="flex w-full items-center gap-3 rounded-lg px-2 py-2 text-sm font-bold hover:bg-[#F8FAFC] transition-colors cursor-pointer"
@@ -141,7 +151,11 @@ export default function ApplicationDetailHeader({
                   <button
                     type="button"
                     onClick={() => {
-                      onStatusChange("Rejected");
+                      if (onRequestAction) {
+                        onRequestAction("reject");
+                      } else {
+                        onStatusChange("Rejected");
+                      }
                       setIsDropdownOpen(false);
                     }}
                     className="flex w-full items-center gap-3 rounded-lg px-2 py-2 text-sm font-bold hover:bg-[#F8FAFC] transition-colors cursor-pointer"

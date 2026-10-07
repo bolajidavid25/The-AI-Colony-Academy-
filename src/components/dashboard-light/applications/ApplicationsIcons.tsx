@@ -213,3 +213,61 @@ export function CloseCircleIcon({ className = "h-5 w-5" }: { className?: string 
     </svg>
   );
 }
+
+export function OctagonWarningIcon({
+  className = "w-10 h-10",
+  strokeColor = "currentColor",
+}: {
+  className?: string;
+  strokeColor?: string;
+}) {
+  return (
+    <svg
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M17.2 6.2H30.8L41.8 17.2V30.8L30.8 41.8H17.2L6.2 30.8V17.2L17.2 6.2Z"
+        stroke={strokeColor}
+        strokeWidth="2.6"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M24 16.5V27"
+        stroke={strokeColor}
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+      <circle cx="24" cy="33.2" r="1.85" fill={strokeColor} />
+    </svg>
+  );
+}
+
+export function SuccessCheckIcon({
+  className = "w-16 h-16",
+  color = "#31CA92",
+}: {
+  className?: string;
+  color?: string;
+}) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <circle cx="32" cy="32" r="22" stroke={color} strokeWidth="2.8" />
+      <path
+        d="M22.5 32.8L28.8 39L41.5 25.5"
+        stroke={color}
+        strokeWidth="3.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+

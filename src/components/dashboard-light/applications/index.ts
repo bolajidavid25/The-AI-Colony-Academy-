@@ -11,6 +11,7 @@ export { default as ApplicationDetailHeader } from "./ApplicationDetailHeader";
 export { default as ApplicantInfoCard } from "./ApplicantInfoCard";
 export { default as MotivationAndWorkSamples } from "./MotivationAndWorkSamples";
 export { default as ApplicationInternalNotes } from "./ApplicationInternalNotes";
+export { default as ConfirmActionModal } from "./ConfirmActionModal";
 
 export * from "./applicationsData";
 export * from "./ApplicationsIcons";
