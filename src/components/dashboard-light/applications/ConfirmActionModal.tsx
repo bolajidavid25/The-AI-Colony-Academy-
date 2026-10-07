@@ -42,7 +42,7 @@ const ACTION_CONFIG: Record<ActionType, ActionConfigItem> = {
     buttonText: "Accept Application",
     icon: AcceptIcon,
     confirmImage: "/images/applications/confirm-accept.png",
-    successImage: null,
+    successImage: "/images/applications/success-accept.png",
   },
   waitlist: {
     iconBg: "#FFF3E0",
