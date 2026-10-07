@@ -20,7 +20,19 @@ export interface ConfirmActionModalProps {
   onConfirm: (actionType: ActionType) => void;
 }
 
-const ACTION_CONFIG = {
+interface ActionConfigItem {
+  iconBg: string;
+  accent: string;
+  question: string;
+  confirmKind: string;
+  successKind: string;
+  buttonText: string;
+  icon: React.ComponentType<{ className?: string }>;
+  confirmImage?: string;
+  successImage?: string | null;
+}
+
+const ACTION_CONFIG: Record<ActionType, ActionConfigItem> = {
   accept: {
     iconBg: "#E1F8EC",
     accent: "#31CA92",
@@ -29,6 +41,8 @@ const ACTION_CONFIG = {
     successKind: "An acceptance",
     buttonText: "Accept Application",
     icon: AcceptIcon,
+    confirmImage: "/images/applications/confirm-accept.png",
+    successImage: null,
   },
   waitlist: {
     iconBg: "#FFF3E0",
@@ -38,6 +52,8 @@ const ACTION_CONFIG = {
     successKind: "A waitlisted",
     buttonText: "Waitlist Application",
     icon: WaitlistIcon,
+    confirmImage: "/images/applications/confirm-waitlist.png",
+    successImage: "/images/applications/success-waitlist.png",
   },
   reject: {
     iconBg: "#FFEAE5",
@@ -47,8 +63,10 @@ const ACTION_CONFIG = {
     successKind: "A rejection",
     buttonText: "Reject Application",
     icon: RejectIcon,
+    confirmImage: "/images/applications/confirm-reject.png",
+    successImage: "/images/applications/success-reject.png",
   },
-} as const;
+};
 
 export default function ConfirmActionModal({
   isOpen,
@@ -94,16 +112,24 @@ export default function ConfirmActionModal({
     >
       <div
         ref={modalRef}
-        className="w-full max-w-[372px] rounded-[24px] bg-white px-6 py-8 text-center shadow-[0_18px_50px_rgba(21,69,53,0.12)]"
+        className="w-full max-w-[372px] rounded-xl bg-white px-6 py-8 text-center shadow-[0_18px_50px_rgba(21,69,53,0.12)]"
       >
         {isSuccess ? (
           <div className="flex flex-col items-center">
-            <div
-              className="mb-6 flex h-[108px] w-[108px] items-center justify-center rounded-full"
-              style={{ backgroundColor: config.iconBg }}
-            >
-              <SuccessCheckIcon className="h-[72px] w-[72px]" color={config.accent} />
-            </div>
+            {config.successImage ? (
+              <img
+                src={config.successImage}
+                alt=""
+                className="mb-6 h-[108px] w-[108px] object-contain"
+              />
+            ) : (
+              <div
+                className="mb-6 flex h-[108px] w-[108px] items-center justify-center rounded-full"
+                style={{ backgroundColor: config.iconBg }}
+              >
+                <SuccessCheckIcon className="h-[72px] w-[72px]" color={config.accent} />
+              </div>
+            )}
 
             <p
               className="mb-8 max-w-[280px] text-[13px] leading-[1.55] font-medium"
@@ -137,12 +163,20 @@ export default function ConfirmActionModal({
           </div>
         ) : (
           <div className="flex flex-col items-center">
-            <div
-              className="mb-5 flex h-[88px] w-[88px] items-center justify-center rounded-full"
-              style={{ backgroundColor: config.iconBg }}
-            >
-              <OctagonWarningIcon className="h-12 w-12" strokeColor={config.accent} />
-            </div>
+            {config.confirmImage ? (
+              <img
+                src={config.confirmImage}
+                alt=""
+                className="mb-5 h-[88px] w-[88px] object-contain"
+              />
+            ) : (
+              <div
+                className="mb-5 flex h-[88px] w-[88px] items-center justify-center rounded-full"
+                style={{ backgroundColor: config.iconBg }}
+              >
+                <OctagonWarningIcon className="h-12 w-12" strokeColor={config.accent} />
+              </div>
+            )}
 
             <h2
               id="confirm-action-title"

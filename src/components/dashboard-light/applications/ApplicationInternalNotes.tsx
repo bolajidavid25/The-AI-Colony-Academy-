@@ -12,7 +12,7 @@ export default function ApplicationInternalNotes({ onAccept }: ApplicationIntern
   return (
     <div className="flex flex-col gap-5">
       {/* Internal Notes Box */}
-      <div className="rounded-2xl p-6 border-0 shadow-none" style={{ backgroundColor: "#F9F9F9" }}>
+      <div className="rounded-xl p-6 border-0 shadow-none" style={{ backgroundColor: "#F9F9F9" }}>
         <h2 className="mb-3 font-bold text-base" style={{ color: "#154535" }}>Internal Notes</h2>
         <textarea
           value={notes}

@@ -8,7 +8,7 @@ interface StatCardProps {
 export function ApplicationsStatCard({ label, value, change, suffix }: StatCardProps) {
   return (
     <div
-      className="rounded-2xl px-6 py-5 transition-all"
+      className="rounded-xl px-6 py-5 transition-all"
       style={{ backgroundColor: "#F9F9F9" }}
     >
       <p className="mb-1 text-xs" style={{ color: "#A0A5B0" }}>

@@ -26,7 +26,7 @@ interface ApplicantInfoCardProps {
 
 export default function ApplicantInfoCard({ status }: ApplicantInfoCardProps) {
   return (
-    <div className="rounded-2xl p-6 border-0 shadow-none" style={{ backgroundColor: "#F9F9F9" }}>
+    <div className="rounded-xl p-6 border-0 shadow-none" style={{ backgroundColor: "#F9F9F9" }}>
       <div className="mb-4 flex items-center justify-between">
         <h2 className="text-base font-bold" style={{ color: "#154535" }}>Applicant Info</h2>
         <span className="text-xs font-bold" style={{ color: "#154535" }}>#tacca-2026-123</span>

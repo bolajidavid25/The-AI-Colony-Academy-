@@ -58,7 +58,7 @@ export default function MotivationAndWorkSamples() {
   return (
     <div className="flex flex-col gap-5">
       {/* Motivation Statement */}
-      <div className="rounded-2xl p-6 border-0 shadow-none" style={{ backgroundColor: "#F9F9F9" }}>
+      <div className="rounded-xl p-6 border-0 shadow-none" style={{ backgroundColor: "#F9F9F9" }}>
         <ScoreInput label="Motivation Statement" />
         <p className="text-sm font-medium leading-relaxed" style={{ color: "#154535" }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -73,7 +73,7 @@ export default function MotivationAndWorkSamples() {
       </div>
 
       {/* Work Sample / Links */}
-      <div className="rounded-2xl p-6 border-0 shadow-none" style={{ backgroundColor: "#F9F9F9" }}>
+      <div className="rounded-xl p-6 border-0 shadow-none" style={{ backgroundColor: "#F9F9F9" }}>
         <ScoreInput label="Work Sample/Links" />
         <div className="flex flex-col gap-1">
           <LinkRow label="Portfolio Website" url="https://jonathan.cooper.dev" />
