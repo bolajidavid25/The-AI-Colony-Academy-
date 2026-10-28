@@ -218,11 +218,16 @@ export const COHORTS_DATA: Cohort[] = [
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
+// 7. Status styles — no border
+// Open:     text #31CA92, bg #8FF9D1
+// Close:    text #FF9E00, bg #FF9E001A (light tint)
+// Archived: text #FE4F08, bg #FE4F081A (light tint)
+// Draft:    text #9E90F2, bg #9E90F21A (light tint)
 export const STATUS_STYLES: Record<CohortStatus, string> = {
-  Open: "bg-[#DCFCE7] text-[#16A34A] border border-[#BBF7D0]",
-  Close: "bg-[#FEF9C3] text-[#CA8A04] border border-[#FDE68A]",
-  Archived: "bg-[#FED7AA] text-[#EA580C] border border-[#FDBA74]",
-  Draft: "bg-[#EDE9FE] text-[#7C3AED] border border-[#DDD6FE]",
-  Pending: "bg-[#FEF9C3] text-[#CA8A04] border border-[#FDE68A]",
-  Active: "bg-[#DCFCE7] text-[#16A34A] border border-[#BBF7D0]",
+  Open: "bg-[#8FF9D1] text-[#31CA92]",
+  Close: "bg-[#FF9E0020] text-[#FF9E00]",
+  Archived: "bg-[#FE4F0820] text-[#FE4F08]",
+  Draft: "bg-[#9E90F220] text-[#9E90F2]",
+  Pending: "bg-[#FF9E0020] text-[#FF9E00]",
+  Active: "bg-[#8FF9D1] text-[#31CA92]",
 };
