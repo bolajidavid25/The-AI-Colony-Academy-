@@ -106,13 +106,13 @@ function ArchiveIcon() {
 
 function ActivityDot({ type }: { type: string }) {
   const colors: Record<string, string> = {
-    session: "bg-[#A855F7]",
-    assignment: "bg-[#10B981]",
-    student: "bg-[#F59E0B]",
-    update: "bg-[#94A3B8]",
+    session:    "bg-[#154535]",   // dark green  – Live session
+    assignment: "bg-[#FF9E00]",   // amber       – Assignment Created
+    student:    "bg-[#FE4F08]",   // red-orange  – New Student Enrolled
+    update:     "bg-[#A0A5B0]",   // grey        – Cohort Update
   };
   return (
-    <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${colors[type] ?? "bg-[#94A3B8]"}`}>
+    <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${colors[type] ?? "bg-[#A0A5B0]"}`}>
       <span className="h-2 w-2 rounded-full bg-white" />
     </span>
   );
@@ -129,7 +129,7 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
       <div className="mb-4">
         <Link
           href="/dashboard-light/cohorts"
-          className="inline-flex items-center gap-1 text-xs font-medium text-[#00B98A] hover:underline mb-3"
+          className="inline-flex items-center gap-1 text-xs font-medium text-[#154535] hover:underline mb-3"
         >
           <ChevronLeftIcon />
           Back to Cohort
@@ -138,26 +138,26 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div>
             <div className="flex items-center gap-3 flex-wrap">
-              <h1 className="text-2xl font-bold text-[#0F172A]">{cohort.name}</h1>
+              <h1 className="text-2xl font-bold text-[#154535]">{cohort.name}</h1>
               <span className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold ${STATUS_STYLES[cohort.status]}`}>
                 {cohort.status}
               </span>
             </div>
-            <p className="mt-1 text-sm text-[#64748B]">Overview and key details of this cohort</p>
+            <p className="mt-1 text-sm text-[#154535]">Overview and key details of this cohort</p>
           </div>
 
           {/* Prev / Next / Action */}
           <div className="relative flex items-center gap-2">
-            <button type="button" className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#E2E8F0] bg-white text-[#64748B] hover:bg-[#F8FAFC] transition-colors">
+            <button type="button" className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#E2E8F0] bg-white text-[#A0A5B0] hover:bg-[#F8FAFC] transition-colors">
               <ChevronIcon dir="left" />
             </button>
-            <button type="button" className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#E2E8F0] bg-white text-[#64748B] hover:bg-[#F8FAFC] transition-colors">
+            <button type="button" className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#E2E8F0] bg-white text-[#A0A5B0] hover:bg-[#F8FAFC] transition-colors">
               <ChevronIcon dir="right" />
             </button>
             <button
               type="button"
               onClick={() => setActionOpen((v) => !v)}
-              className="inline-flex items-center gap-2 rounded-lg bg-[#00B98A] px-4 py-2 text-sm font-semibold text-white hover:bg-[#009E76] transition-colors"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#154535] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0f3226] transition-colors"
             >
               Action
               <ChevronDownIcon />
@@ -201,8 +201,8 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
         {/* ── Col 1: Applicant Info ── */}
         <div className="rounded-xl border border-[#F1F5F9] bg-white p-5">
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-sm font-bold text-[#0F172A]">Applicant Info</h2>
-            <span className="text-xs text-[#94A3B8]">#tacca-2026-123</span>
+            <h2 className="text-sm font-bold text-[#154535]">Applicant Info</h2>
+            <span className="text-xs text-[#A0A5B0]">#tacca-2026-123</span>
           </div>
 
           <dl className="space-y-4 text-sm">
@@ -225,7 +225,7 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
               {
                 label: "Sponsor",
                 value: (
-                  <span className="font-semibold text-[#00B98A]">{cohort.sponsor}</span>
+                  <span className="font-semibold text-[#154535]">{cohort.sponsor}</span>
                 ),
               },
               {
@@ -233,7 +233,7 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
                 value: (
                   <span className="flex items-center gap-1.5">
                     {cohort.circleSpaceId}
-                    <button type="button" aria-label="Copy" className="text-[#94A3B8] hover:text-[#475569]">
+                    <button type="button" aria-label="Copy" className="text-[#A0A5B0] hover:text-[#475569]">
                       <CopyIcon />
                     </button>
                   </span>
@@ -242,8 +242,8 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
               { label: "Created at", value: cohort.createdAt },
             ].map(({ label, value }) => (
               <div key={label} className="flex items-start justify-between gap-3">
-                <dt className="shrink-0 text-[#64748B]">{label}</dt>
-                <dd className="text-right text-[#0F172A] whitespace-pre-line">{value}</dd>
+                <dt className="shrink-0 text-[#A0A5B0]">{label}</dt>
+                <dd className="text-right text-[#154535] whitespace-pre-line">{value}</dd>
               </div>
             ))}
           </dl>
@@ -254,21 +254,21 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
           {/* Cohort Description */}
           <div className="rounded-xl border border-[#F1F5F9] bg-white p-5">
             <div className="mb-3 flex items-center justify-between">
-              <h2 className="text-sm font-bold text-[#0F172A]">Cohort Description</h2>
+              <h2 className="text-sm font-bold text-[#154535]">Cohort Description</h2>
               <button type="button" className="text-[#00B98A] hover:opacity-80 transition-opacity">
                 <EditSquareIcon />
               </button>
             </div>
-            <p className="text-sm leading-relaxed text-[#475569]">{cohort.description}</p>
+            <p className="text-sm leading-relaxed text-[#A0A5B0]">{cohort.description}</p>
           </div>
 
           {/* Instructors */}
           <div className="rounded-xl border border-[#F1F5F9] bg-white p-5">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-sm font-bold text-[#0F172A]">
+              <h2 className="text-sm font-bold text-[#154535]">
                 Instructors ({cohort.instructors.length})
               </h2>
-              <button type="button" className="text-xs font-semibold text-[#00B98A] hover:underline">
+              <button type="button" className="text-xs font-semibold text-[#154535] hover:underline">
                 Manage Instructors
               </button>
             </div>
@@ -277,24 +277,24 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
               {cohort.instructors.map((ins) => (
                 <div key={ins.id} className="flex items-start gap-3">
                   {/* Avatar */}
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#94A3B8] text-sm font-bold text-white">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#A0A5B0] text-sm font-bold text-white">
                     {ins.avatarInitials}
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="font-semibold text-[#0F172A] text-sm">{ins.name}</span>
+                      <span className="font-semibold text-[#154535] text-sm">{ins.name}</span>
                       <span
                         className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
                           ins.role === "Lead Instructor"
                             ? "bg-[#DCFCE7] text-[#16A34A]"
-                            : "bg-[#F1F5F9] text-[#475569]"
+                            : "bg-[#F1F5F9] text-[#A0A5B0]"
                         }`}
                       >
                         {ins.role}
                       </span>
                     </div>
-                    <p className="text-xs text-[#64748B] mt-0.5">{ins.title}</p>
-                    <div className="mt-1.5 flex flex-wrap items-center gap-4 text-xs text-[#64748B]">
+                    <p className="text-xs text-[#A0A5B0] mt-0.5">{ins.title}</p>
+                    <div className="mt-1.5 flex flex-wrap items-center gap-4 text-xs text-[#A0A5B0]">
                       <span className="flex items-center gap-1">
                         <MailIcon />
                         {ins.email}
@@ -324,12 +324,12 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
         <div className="space-y-5">
           {/* Session Schedule */}
           <div className="rounded-xl border border-[#F1F5F9] bg-white p-5">
-            <h2 className="mb-4 text-sm font-bold text-[#0F172A]">Session Schedule</h2>
+            <h2 className="mb-4 text-sm font-bold text-[#154535]">Session Schedule</h2>
             <div className="space-y-3">
               {cohort.sessions.map((s) => (
                 <div key={s.id} className="rounded-lg bg-[#F8FAFC] p-3">
-                  <p className="text-xs font-semibold text-[#0F172A]">{s.title}</p>
-                  <p className="mt-0.5 text-xs text-[#64748B]">
+                  <p className="text-xs font-semibold text-[#154535]">{s.title}</p>
+                  <p className="mt-0.5 text-xs text-[#A0A5B0]">
                     {s.date} — {s.time}
                   </p>
                 </div>
@@ -337,7 +337,7 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
             </div>
             <button
               type="button"
-              className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-lg border border-dashed border-[#00B98A] bg-[#F0FDF9] py-2.5 text-xs font-semibold text-[#00B98A] hover:bg-[#DCFCE7] transition-colors"
+              className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-lg border border-dashed border-[#154535] bg-[#F0FDF9] py-2.5 text-xs font-semibold text-[#154535] hover:bg-[#DCFCE7] transition-colors"
             >
               <PlusIcon />
               Add Session
@@ -347,8 +347,8 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
           {/* Recent Activity */}
           <div className="rounded-xl border border-[#F1F5F9] bg-white p-5">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-sm font-bold text-[#0F172A]">Recent Activity</h2>
-              <button type="button" className="text-xs font-semibold text-[#00B98A] hover:underline">
+              <h2 className="text-sm font-bold text-[#154535]">Recent Activity</h2>
+              <button type="button" className="text-xs font-semibold text-[#154535] hover:underline">
                 View All
               </button>
             </div>
@@ -357,8 +357,8 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
                 <div key={a.id} className="flex items-start gap-3">
                   <ActivityDot type={a.type} />
                   <div className="min-w-0">
-                    <p className="text-xs font-semibold text-[#00B98A] leading-tight">{a.label}</p>
-                    <p className="mt-0.5 text-xs text-[#94A3B8]">
+                    <p className="text-xs font-semibold text-[#154535] leading-tight">{a.label}</p>
+                    <p className="mt-0.5 text-xs text-[#A0A5B0]">
                       {a.date} — {a.time}
                     </p>
                   </div>
