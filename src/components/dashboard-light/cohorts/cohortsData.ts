@@ -10,6 +10,7 @@ export type Instructor = {
   email: string;
   phone: string;
   avatarInitials: string;
+  avatarUrl?: string;
 };
 
 export type Session = {
@@ -77,6 +78,7 @@ export const COHORTS_DATA: Cohort[] = [
         email: "James.rodriguez@gmail",
         phone: "+234 9012 345 678",
         avatarInitials: "JR",
+        avatarUrl: "https://i.pravatar.cc/150?img=11",
       },
       {
         id: "i2",
@@ -86,6 +88,7 @@ export const COHORTS_DATA: Cohort[] = [
         email: "James.rodriguez@gmail",
         phone: "+234 9012 345 678",
         avatarInitials: "JR",
+        avatarUrl: "https://i.pravatar.cc/150?img=32",
       },
       {
         id: "i3",
@@ -95,6 +98,7 @@ export const COHORTS_DATA: Cohort[] = [
         email: "James.rodriguez@gmail",
         phone: "+234 9012 345 678",
         avatarInitials: "JR",
+        avatarUrl: "https://i.pravatar.cc/150?img=57",
       },
     ],
     sessions: [

@@ -283,10 +283,10 @@ export default function CreateCohortForm() {
           <Field label="Cohort Description" error={errors.description?.message}>
             <div className="relative">
               <textarea
-                rows={4}
+                rows={3}
                 maxLength={500}
                 placeholder="Enter a brief description of this cohort..."
-                className={`w-full resize-none rounded-lg border border-[#E2E8F0] bg-[#FFF] px-3.5 py-3 font-['Inter'] text-[14px] font-normal leading-none tracking-[-0.03em] text-[#A0A5B0] outline-none placeholder:text-[#A0A5B0] focus:border-[#00B98A] transition-colors ${
+                className={`w-full resize-none rounded-lg border border-[#E2E8F0] bg-[#FFF] px-3.5 py-2.5 font-['Inter'] text-[14px] font-normal leading-normal tracking-[-0.03em] text-[#A0A5B0] outline-none placeholder:text-[#A0A5B0] focus:border-[#00B98A] transition-colors ${
                   errors.description ? inputError : ""
                 }`}
                 {...register("description")}
@@ -299,7 +299,7 @@ export default function CreateCohortForm() {
         </div>
 
         {/* ── Additional Settings Section ── */}
-        <div className="rounded-xl border border-[#F1F5F9] bg-white p-6 mb-8">
+        <div className="rounded-xl border border-[#F1F5F9] bg-[#F9F9F9] p-6 mb-8">
           <h2 className="mb-5 font-['Inter'] text-[16px] font-bold leading-none tracking-[-0.03em] text-[#154535]">Additional Settings</h2>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">

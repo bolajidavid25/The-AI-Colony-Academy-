@@ -104,16 +104,29 @@ function ArchiveIcon() {
 
 // ─── Activity Icon by type ─────────────────────────────────────────────────────
 
+const ACTIVITY_CONFIG: Record<string, { bg: string; icon: string }> = {
+  session:    { bg: "#9E90F2", icon: "/activity-session.png"    }, // Live session scheduled
+  assignment: { bg: "#31CA92", icon: "/activity-assignment.png" }, // Assignment Created
+  student:    { bg: "#FF9E00", icon: "/activity-student.png"    }, // New Student Enrolled
+  update:     { bg: "#1A7959", icon: "/activity-update.png"     }, // Cohort Update by Admin User
+};
+
 function ActivityDot({ type }: { type: string }) {
-  const colors: Record<string, string> = {
-    session:    "bg-[#154535]",   // dark green  – Live session
-    assignment: "bg-[#FF9E00]",   // amber       – Assignment Created
-    student:    "bg-[#FE4F08]",   // red-orange  – New Student Enrolled
-    update:     "bg-[#A0A5B0]",   // grey        – Cohort Update
-  };
+  const config = ACTIVITY_CONFIG[type] ?? { bg: "#A0A5B0", icon: "" };
   return (
-    <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${colors[type] ?? "bg-[#A0A5B0]"}`}>
-      <span className="h-2 w-2 rounded-full bg-white" />
+    <span
+      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full overflow-hidden"
+      style={{ backgroundColor: config.bg }}
+    >
+      {config.icon ? (
+        <img
+          src={config.icon}
+          alt={type}
+          className="h-5 w-5 object-contain"
+        />
+      ) : (
+        <span className="h-2 w-2 rounded-full bg-white" />
+      )}
     </span>
   );
 }
@@ -129,7 +142,8 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
       <div className="mb-4">
         <Link
           href="/dashboard-light/cohorts"
-          className="inline-flex items-center gap-1 text-xs font-medium text-[#154535] hover:underline mb-3"
+          className="inline-flex items-center gap-1 text-xs font-medium hover:underline mb-3"
+          style={{ color: "#FE4F08" }}
         >
           <ChevronLeftIcon />
           Back to Cohort
@@ -148,16 +162,27 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
 
           {/* Prev / Next / Action */}
           <div className="relative flex items-center gap-2">
-            <button type="button" className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#E2E8F0] bg-white text-[#A0A5B0] hover:bg-[#F8FAFC] transition-colors">
+            <button
+              type="button"
+              className="flex items-center gap-1 h-9 px-3 rounded-lg border border-[#E2E8F0] text-xs font-medium transition-colors hover:opacity-80"
+              style={{ backgroundColor: "#F9F9F9", color: "#A0A5B0" }}
+            >
               <ChevronIcon dir="left" />
+              Prev
             </button>
-            <button type="button" className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#E2E8F0] bg-white text-[#A0A5B0] hover:bg-[#F8FAFC] transition-colors">
+            <button
+              type="button"
+              className="flex items-center gap-1 h-9 px-3 rounded-lg border border-[#E2E8F0] text-xs font-medium transition-colors hover:opacity-80"
+              style={{ backgroundColor: "#F9F9F9", color: "#A0A5B0" }}
+            >
+              Next
               <ChevronIcon dir="right" />
             </button>
             <button
               type="button"
               onClick={() => setActionOpen((v) => !v)}
-              className="inline-flex items-center gap-2 rounded-lg bg-[#154535] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0f3226] transition-colors"
+              className="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white transition-colors hover:opacity-90"
+              style={{ backgroundColor: "#31CA92" }}
             >
               Action
               <ChevronDownIcon />
@@ -165,31 +190,48 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
 
             {/* Action Dropdown */}
             {actionOpen && (
-              <div className="absolute right-0 top-12 z-50 w-52 rounded-xl border border-[#E2E8F0] bg-white py-2 shadow-xl">
-                <Link
-                  href={`/dashboard-light/cohorts/${cohort.id}/edit`}
-                  onClick={() => setActionOpen(false)}
-                  className="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-[#0F172A] hover:bg-[#F8FAFC] transition-colors"
-                >
-                  <EditCohortIcon />
-                  Edit Cohort
-                </Link>
-                <Link
-                  href="/dashboard-light/cohorts/new"
-                  onClick={() => setActionOpen(false)}
-                  className="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-[#0F172A] hover:bg-[#F8FAFC] transition-colors"
-                >
-                  <NewCohortIcon />
-                  New Cohort
-                </Link>
-                <button
-                  type="button"
-                  onClick={() => setActionOpen(false)}
-                  className="flex w-full items-center gap-3 px-4 py-2.5 text-sm font-medium text-[#EF4444] hover:bg-[#FEF2F2] transition-colors"
-                >
-                  <ArchiveIcon />
-                  Archive Cohort
-                </button>
+              <div className="absolute right-0 top-12 z-50 w-56 rounded-2xl border border-[#E2E8F0] bg-white p-3 shadow-xl">
+                <div className="flex justify-end pb-1">
+                  <button
+                    type="button"
+                    onClick={() => setActionOpen(false)}
+                    className="text-[#A0A5B0] hover:text-[#475569] transition-colors"
+                    aria-label="Close menu"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="15" y1="9" x2="9" y2="15" />
+                      <line x1="9" y1="9" x2="15" y2="15" />
+                    </svg>
+                  </button>
+                </div>
+                <div className="space-y-1">
+                  <Link
+                    href={`/dashboard-light/cohorts/${cohort.id}/edit`}
+                    onClick={() => setActionOpen(false)}
+                    className="flex items-center gap-3 px-3 py-2 text-sm font-bold text-[#154535] hover:bg-[#F8FAFC] rounded-lg transition-colors"
+                  >
+                    <img src="/icon-edit-cohort.png" alt="Edit" className="h-5 w-5 object-contain" />
+                    Edit Cohort
+                  </Link>
+                  <div className="border-b border-[#F1F5F9] my-1" />
+                  <Link
+                    href="/dashboard-light/cohorts/new"
+                    onClick={() => setActionOpen(false)}
+                    className="flex items-center gap-3 px-3 py-2 text-sm font-bold text-[#154535] hover:bg-[#F8FAFC] rounded-lg transition-colors"
+                  >
+                    <img src="/icon-new-cohort.png" alt="New" className="h-5 w-5 object-contain" />
+                    New Cohort
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => setActionOpen(false)}
+                    className="flex w-full items-center gap-3 px-3 py-2 text-sm font-bold text-[#154535] hover:bg-[#F8FAFC] rounded-lg transition-colors"
+                  >
+                    <img src="/icon-archive-cohort.png" alt="Archive" className="h-5 w-5 object-contain" />
+                    Archive Cohort
+                  </button>
+                </div>
               </div>
             )}
           </div>
@@ -199,13 +241,13 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
       {/* ── Three-column grid ── */}
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-[320px_1fr_280px]">
         {/* ── Col 1: Applicant Info ── */}
-        <div className="rounded-xl border border-[#F1F5F9] bg-white p-5">
-          <div className="mb-4 flex items-center justify-between">
+        <div className="rounded-xl border border-[#F1F5F9] bg-[#F9F9F9] p-5">
+          <div className="mb-2 flex items-center justify-between pb-3 border-b border-[#E7EBE9]">
             <h2 className="text-sm font-bold text-[#154535]">Applicant Info</h2>
-            <span className="text-xs text-[#A0A5B0]">#tacca-2026-123</span>
+            <span className="text-xs" style={{ color: "#828282" }}>#tacca-2026-123</span>
           </div>
 
-          <dl className="space-y-4 text-sm">
+          <dl className="text-sm">
             {[
               { label: "Name", value: cohort.name },
               {
@@ -225,7 +267,7 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
               {
                 label: "Sponsor",
                 value: (
-                  <span className="font-semibold text-[#154535]">{cohort.sponsor}</span>
+                  <span style={{ color: "#9E90F2", fontWeight: 700, fontSize: "14px" }}>{cohort.sponsor}</span>
                 ),
               },
               {
@@ -241,9 +283,17 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
               },
               { label: "Created at", value: cohort.createdAt },
             ].map(({ label, value }) => (
-              <div key={label} className="flex items-start justify-between gap-3">
-                <dt className="shrink-0 text-[#A0A5B0]">{label}</dt>
-                <dd className="text-right text-[#154535] whitespace-pre-line">{value}</dd>
+              <div
+                key={label}
+                className="flex items-start justify-between gap-3 py-3.5 border-b border-[#E7EBE9]"
+              >
+                <dt className="shrink-0" style={{ color: "#154535" }}>{label}</dt>
+                <dd
+                  className="text-right whitespace-pre-line"
+                  style={{ color: "#A0A5B0", fontWeight: 700, fontSize: "14px", fontFamily: "Inter, sans-serif" }}
+                >
+                  {value}
+                </dd>
               </div>
             ))}
           </dl>
@@ -252,43 +302,51 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
         {/* ── Col 2: Description + Instructors ── */}
         <div className="space-y-5">
           {/* Cohort Description */}
-          <div className="rounded-xl border border-[#F1F5F9] bg-white p-5">
-            <div className="mb-3 flex items-center justify-between">
-              <h2 className="text-sm font-bold text-[#154535]">Cohort Description</h2>
-              <button type="button" className="text-[#00B98A] hover:opacity-80 transition-opacity">
-                <EditSquareIcon />
+          <div className="rounded-xl border border-[#F1F5F9] bg-[#F9F9F9] p-5">
+            <div className="mb-3 pb-3 border-b border-[#E7EBE9] flex items-center justify-between">
+              <h2 className="text-sm font-bold" style={{ color: "#154535" }}>Cohort Description</h2>
+              <button type="button" className="hover:opacity-80 transition-opacity">
+                <img src="/edit-icon.png" alt="Edit" className="h-7 w-7 object-contain" />
               </button>
             </div>
-            <p className="text-sm leading-relaxed text-[#A0A5B0]">{cohort.description}</p>
+            <p className="text-sm leading-relaxed" style={{ color: "#154535" }}>{cohort.description}</p>
           </div>
 
           {/* Instructors */}
-          <div className="rounded-xl border border-[#F1F5F9] bg-white p-5">
+          <div className="rounded-xl border border-[#F1F5F9] bg-[#F9F9F9] p-5">
             <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-sm font-bold text-[#154535]">
+              <h2 className="text-sm font-bold" style={{ color: "#154535" }}>
                 Instructors ({cohort.instructors.length})
               </h2>
-              <button type="button" className="text-xs font-semibold text-[#154535] hover:underline">
+              <button type="button" className="text-xs font-semibold underline hover:opacity-80" style={{ color: "#009261" }}>
                 Manage Instructors
               </button>
             </div>
 
             <div className="space-y-4">
-              {cohort.instructors.map((ins) => (
-                <div key={ins.id} className="flex items-start gap-3">
+              {cohort.instructors.map((ins, idx) => (
+                <div
+                  key={ins.id}
+                  className={`flex items-start gap-3 ${idx < cohort.instructors.length - 1 ? "pb-3.5 border-b border-[#E7EBE9]" : ""}`}
+                >
                   {/* Avatar */}
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#A0A5B0] text-sm font-bold text-white">
-                    {ins.avatarInitials}
+                  <div className="h-10 w-10 shrink-0 rounded-full overflow-hidden">
+                    <img
+                      src="/instructor-avatar.png"
+                      alt={ins.name}
+                      className="h-full w-full object-cover"
+                    />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="font-semibold text-[#154535] text-sm">{ins.name}</span>
+                      <span className="font-semibold text-sm" style={{ color: "#154535" }}>{ins.name}</span>
                       <span
-                        className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${
+                        style={
                           ins.role === "Lead Instructor"
-                            ? "bg-[#DCFCE7] text-[#16A34A]"
-                            : "bg-[#F1F5F9] text-[#A0A5B0]"
-                        }`}
+                            ? { backgroundColor: "#4FD9A650", color: "#154535" }
+                            : { backgroundColor: "#9E90F238", color: "#9E90F2" }
+                        }
+                        className="rounded-full px-2.5 py-0.5 text-xs font-semibold"
                       >
                         {ins.role}
                       </span>
@@ -312,7 +370,8 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
             {/* Add Instructor */}
             <button
               type="button"
-              className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg border border-dashed border-[#00B98A] bg-[#F0FDF9] py-3 text-sm font-semibold text-[#00B98A] hover:bg-[#DCFCE7] transition-colors"
+              className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg py-3 text-sm font-semibold transition-colors hover:opacity-90"
+              style={{ backgroundColor: "#31CA9224", color: "#154535" }}
             >
               <PlusIcon />
               Add Instructor
@@ -323,11 +382,14 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
         {/* ── Col 3: Session Schedule + Recent Activity ── */}
         <div className="space-y-5">
           {/* Session Schedule */}
-          <div className="rounded-xl border border-[#F1F5F9] bg-white p-5">
+          <div className="rounded-xl border border-[#F1F5F9] bg-[#F9F9F9] p-5">
             <h2 className="mb-4 text-sm font-bold text-[#154535]">Session Schedule</h2>
             <div className="space-y-3">
-              {cohort.sessions.map((s) => (
-                <div key={s.id} className="rounded-lg bg-[#F8FAFC] p-3">
+              {cohort.sessions.map((s, idx) => (
+                <div
+                  key={s.id}
+                  className={`py-1.5 ${idx < cohort.sessions.length - 1 ? "pb-3 border-b border-[#E7EBE9]" : ""}`}
+                >
                   <p className="text-xs font-semibold text-[#154535]">{s.title}</p>
                   <p className="mt-0.5 text-xs text-[#A0A5B0]">
                     {s.date} — {s.time}
@@ -337,7 +399,7 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
             </div>
             <button
               type="button"
-              className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-lg border border-dashed border-[#154535] bg-[#F0FDF9] py-2.5 text-xs font-semibold text-[#154535] hover:bg-[#DCFCE7] transition-colors"
+              className="mt-3 flex w-full items-center justify-center gap-1.5 rounded-lg bg-[#F0FDF9] py-2.5 text-xs font-semibold text-[#154535] hover:bg-[#DCFCE7] transition-colors"
             >
               <PlusIcon />
               Add Session
@@ -345,7 +407,7 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
           </div>
 
           {/* Recent Activity */}
-          <div className="rounded-xl border border-[#F1F5F9] bg-white p-5">
+          <div className="rounded-xl border border-[#F1F5F9] bg-[#F9F9F9] p-5">
             <div className="mb-4 flex items-center justify-between">
               <h2 className="text-sm font-bold text-[#154535]">Recent Activity</h2>
               <button type="button" className="text-xs font-semibold text-[#154535] hover:underline">
@@ -353,8 +415,11 @@ export default function CohortDetailScreen({ cohort }: { cohort: Cohort }) {
               </button>
             </div>
             <div className="space-y-3">
-              {cohort.recentActivity.map((a) => (
-                <div key={a.id} className="flex items-start gap-3">
+              {cohort.recentActivity.map((a, idx) => (
+                <div
+                  key={a.id}
+                  className={`flex items-start gap-3 ${idx < cohort.recentActivity.length - 1 ? "pb-3 border-b border-[#E7EBE9]" : ""}`}
+                >
                   <ActivityDot type={a.type} />
                   <div className="min-w-0">
                     <p className="text-xs font-semibold text-[#154535] leading-tight">{a.label}</p>
