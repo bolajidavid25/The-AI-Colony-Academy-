@@ -8,14 +8,16 @@ interface StudentAtRiskCardProps {
 }
 
 export default function StudentAtRiskCard({ atRisk }: StudentAtRiskCardProps) {
-  // SVG Donut dimensions matching Figma design
-  const size = 136;
-  const strokeWidth = 13;
+  // SVG Donut dimensions matching design: flat/butt edges, no rounded caps
+  const size = 132;
+  const strokeWidth = 12;
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
-  // Green covers ~78%, orange covers ~22% positioned in the bottom-right quadrant
-  const greenStroke = circumference * 0.78;
-  const orangeStroke = circumference * 0.22;
+  // Orange segment starts at 3 o'clock (0°) and spans ~14.5% clockwise (to ~52°).
+  // Green segment covers the remaining ~85.5% clockwise back to 3 o'clock.
+  const orangeFraction = 0.145;
+  const orangeStroke = circumference * orangeFraction;
+  const greenStroke = circumference * (1 - orangeFraction);
 
   return (
     <div
@@ -27,15 +29,14 @@ export default function StudentAtRiskCard({ atRisk }: StudentAtRiskCardProps) {
       </h2>
 
       <div className="flex flex-col sm:flex-row items-center gap-6">
-        {/* ── Donut Chart ── */}
+        {/* ── Donut Chart (Flat / Butt edges with seamless junction) ── */}
         <div className="relative shrink-0 flex items-center justify-center">
           <svg
             width={size}
             height={size}
             viewBox={`0 0 ${size} ${size}`}
-            className="transform -rotate-90"
           >
-            {/* Orange segment in bottom right quadrant */}
+            {/* Orange segment in bottom-right: starts at 3 o'clock and extends clockwise */}
             <circle
               cx={size / 2}
               cy={size / 2}
@@ -44,10 +45,10 @@ export default function StudentAtRiskCard({ atRisk }: StudentAtRiskCardProps) {
               stroke="#FE9A00"
               strokeWidth={strokeWidth}
               strokeDasharray={`${orangeStroke} ${circumference}`}
-              strokeDashoffset={-greenStroke}
-              strokeLinecap="round"
+              strokeDashoffset={0}
+              strokeLinecap="butt"
             />
-            {/* Primary Green segment */}
+            {/* Primary Green segment: continues seamlessly clockwise back to 3 o'clock */}
             <circle
               cx={size / 2}
               cy={size / 2}
@@ -56,21 +57,21 @@ export default function StudentAtRiskCard({ atRisk }: StudentAtRiskCardProps) {
               stroke="#20C997"
               strokeWidth={strokeWidth}
               strokeDasharray={`${greenStroke} ${circumference}`}
-              strokeDashoffset={0}
-              strokeLinecap="round"
+              strokeDashoffset={-orangeStroke}
+              strokeLinecap="butt"
             />
           </svg>
 
           {/* Center Text */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center select-none pointer-events-none">
             <span
-              className="text-[20px] font-black leading-tight"
+              className="text-[20px] font-black leading-tight tracking-tight"
               style={{ color: "#154535" }}
             >
               Low
             </span>
             <span
-              className="text-[20px] font-black leading-tight"
+              className="text-[20px] font-black leading-tight tracking-tight"
               style={{ color: "#154535" }}
             >
               Risk
