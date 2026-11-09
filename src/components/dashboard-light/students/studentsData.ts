@@ -1,0 +1,210 @@
+export type StudentStatus = "Active" | "Inactive";
+
+export interface StudentRecord {
+  id: string;
+  name: string;
+  email: string;
+  cohort: string;
+  course: string;
+  attendance: string;
+  attendancePercent: number;
+  submission: string;
+  submissionPercent: number;
+  activityPoint: number;
+  status: StudentStatus;
+  avatarUrl?: string;
+  enrollmentDate?: string;
+}
+
+export const INITIAL_STUDENTS_DATA: StudentRecord[] = [
+  {
+    id: "stu-1",
+    name: "Ogunmepo James Bond",
+    email: "ogunmepojamesbond@gmail.com",
+    cohort: "AI for African use cases",
+    course: "AI Engineering",
+    attendance: "40%",
+    attendancePercent: 40,
+    submission: "60%",
+    submissionPercent: 60,
+    activityPoint: 320,
+    status: "Active",
+    enrollmentDate: "2026-05-30",
+  },
+  {
+    id: "stu-2",
+    name: "Ogunmepo James Bond",
+    email: "ogunmepojamesbond@gmail.com",
+    cohort: "AI for African use cases",
+    course: "AI Engineering",
+    attendance: "40%",
+    attendancePercent: 40,
+    submission: "60%",
+    submissionPercent: 60,
+    activityPoint: 320,
+    status: "Active",
+    enrollmentDate: "2026-05-29",
+  },
+  {
+    id: "stu-3",
+    name: "Ogunmepo James Bond",
+    email: "ogunmepojamesbond@gmail.com",
+    cohort: "AI for African use cases",
+    course: "AI Engineering",
+    attendance: "40%",
+    attendancePercent: 40,
+    submission: "60%",
+    submissionPercent: 60,
+    activityPoint: 320,
+    status: "Active",
+    enrollmentDate: "2026-05-28",
+  },
+  {
+    id: "stu-4",
+    name: "Ogunmepo James Bond",
+    email: "ogunmepojamesbond@gmail.com",
+    cohort: "AI for African use cases",
+    course: "AI Engineering",
+    attendance: "40%",
+    attendancePercent: 40,
+    submission: "60%",
+    submissionPercent: 60,
+    activityPoint: 320,
+    status: "Inactive",
+    enrollmentDate: "2026-05-27",
+  },
+  {
+    id: "stu-5",
+    name: "Ogunmepo James Bond",
+    email: "ogunmepojamesbond@gmail.com",
+    cohort: "AI for African use cases",
+    course: "AI Engineering",
+    attendance: "40%",
+    attendancePercent: 40,
+    submission: "60%",
+    submissionPercent: 60,
+    activityPoint: 320,
+    status: "Inactive",
+    enrollmentDate: "2026-05-26",
+  },
+  {
+    id: "stu-6",
+    name: "Ogunmepo James Bond",
+    email: "ogunmepojamesbond@gmail.com",
+    cohort: "AI for African use cases",
+    course: "AI Engineering",
+    attendance: "40%",
+    attendancePercent: 40,
+    submission: "60%",
+    submissionPercent: 60,
+    activityPoint: 320,
+    status: "Active",
+    enrollmentDate: "2026-05-25",
+  },
+  {
+    id: "stu-7",
+    name: "Ogunmepo James Bond",
+    email: "ogunmepojamesbond@gmail.com",
+    cohort: "AI for African use cases",
+    course: "AI Engineering",
+    attendance: "40%",
+    attendancePercent: 40,
+    submission: "60%",
+    submissionPercent: 60,
+    activityPoint: 320,
+    status: "Active",
+    enrollmentDate: "2026-05-24",
+  },
+  {
+    id: "stu-8",
+    name: "Ogunmepo James Bond",
+    email: "ogunmepojamesbond@gmail.com",
+    cohort: "AI for African use cases",
+    course: "AI Engineering",
+    attendance: "40%",
+    attendancePercent: 40,
+    submission: "60%",
+    submissionPercent: 60,
+    activityPoint: 320,
+    status: "Active",
+    enrollmentDate: "2026-05-23",
+  },
+  {
+    id: "stu-9",
+    name: "Ogunmepo James Bond",
+    email: "ogunmepojamesbond@gmail.com",
+    cohort: "AI for African use cases",
+    course: "AI Engineering",
+    attendance: "40%",
+    attendancePercent: 40,
+    submission: "60%",
+    submissionPercent: 60,
+    activityPoint: 320,
+    status: "Active",
+    enrollmentDate: "2026-05-22",
+  },
+  {
+    id: "stu-10",
+    name: "Ogunmepo James Bond",
+    email: "ogunmepojamesbond@gmail.com",
+    cohort: "AI for African use cases",
+    course: "AI Engineering",
+    attendance: "40%",
+    attendancePercent: 40,
+    submission: "60%",
+    submissionPercent: 60,
+    activityPoint: 320,
+    status: "Active",
+    enrollmentDate: "2026-05-21",
+  },
+  {
+    id: "stu-11",
+    name: "Ogunmepo James Bond",
+    email: "ogunmepojamesbond@gmail.com",
+    cohort: "AI for African use cases",
+    course: "AI Engineering",
+    attendance: "40%",
+    attendancePercent: 40,
+    submission: "60%",
+    submissionPercent: 60,
+    activityPoint: 320,
+    status: "Active",
+    enrollmentDate: "2026-05-20",
+  },
+  {
+    id: "stu-12",
+    name: "Ogunmepo James Bond",
+    email: "ogunmepojamesbond@gmail.com",
+    cohort: "AI for African use cases",
+    course: "AI Engineering",
+    attendance: "40%",
+    attendancePercent: 40,
+    submission: "60%",
+    submissionPercent: 60,
+    activityPoint: 320,
+    status: "Active",
+    enrollmentDate: "2026-05-19",
+  },
+];
+
+export const COHORT_OPTIONS = [
+  "All Cohorts",
+  "AI for African use cases",
+  "AI for marketers",
+  "AI Engineering Cohort 1",
+];
+
+export const COURSE_OPTIONS = [
+  "All Courses",
+  "AI Engineering",
+  "AI Marketing",
+];
+
+export const SORT_OPTIONS = [
+  "Sort By Newest",
+  "Sort By Oldest",
+  "Sort By Name",
+  "Sort By Activity Point",
+  "Sort By Attendance",
+  "Sort By Submission",
+];
