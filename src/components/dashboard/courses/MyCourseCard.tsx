@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Course } from "./coursesData";
 
 type MyCourseCardProps = {
@@ -40,14 +41,24 @@ export default function MyCourseCard({ course, onStart }: MyCourseCardProps) {
             </span>
           </div>
 
-          <button
-            type="button"
-            onClick={() => onStart(course)}
-            className="inline-flex shrink-0 items-center gap-1 rounded-full bg-[#31CA92] px-4 py-2 text-[12px] font-semibold text-white transition-opacity hover:opacity-90"
-          >
-            Start Learning
-            <span aria-hidden="true">→</span>
-          </button>
+          {course.progress === 100 ? (
+            <Link
+              href={`/dashboard/certificate?course=${encodeURIComponent(course.title)}&rain=true`}
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[#154535] px-4 py-2 text-[12px] font-semibold text-white transition-opacity hover:opacity-90"
+            >
+              View Certificate
+              <span aria-hidden="true">🎓</span>
+            </Link>
+          ) : (
+            <button
+              type="button"
+              onClick={() => onStart(course)}
+              className="inline-flex shrink-0 items-center gap-1 rounded-full bg-[#31CA92] px-4 py-2 text-[12px] font-semibold text-white transition-opacity hover:opacity-90"
+            >
+              Start Learning
+              <span aria-hidden="true">→</span>
+            </button>
+          )}
         </div>
       </div>
     </article>
