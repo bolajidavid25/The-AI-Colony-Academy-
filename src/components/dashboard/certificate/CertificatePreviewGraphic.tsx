@@ -1,5 +1,5 @@
 import Image from "next/image";
-import certificationCard from "../../../assets/certification-card.png";
+import certificateTemplate from "../../../assets/certificate-template.png";
 
 interface CertificatePreviewGraphicProps {
   courseTitle?: string;
@@ -7,14 +7,14 @@ interface CertificatePreviewGraphicProps {
 }
 
 export default function CertificatePreviewGraphic({
-  courseTitle = "Advanced AI Marketing",
+  courseTitle = "AI Engineering",
   variant = "thumb",
 }: CertificatePreviewGraphicProps) {
   if (variant === "full") {
     return (
-      <div className="relative mx-auto w-full max-w-[480px] overflow-hidden rounded-xl border border-[#E2E8F0] bg-white p-2 shadow-xs">
+      <div className="relative mx-auto w-full max-w-[360px] overflow-hidden rounded-xl border border-[#E2E8F0] bg-white p-2 shadow-sm">
         <Image
-          src={certificationCard}
+          src={certificateTemplate}
           alt={`${courseTitle} Certificate`}
           className="h-auto w-full rounded-lg object-contain"
           priority
@@ -27,15 +27,15 @@ export default function CertificatePreviewGraphic({
 
   return (
     <div
-      className={`relative shrink-0 overflow-hidden rounded-[8px] bg-white shadow-xs ${
-        isBanner ? "h-[85px] w-[130px] p-1" : "h-[56px] w-[82px] p-0.5"
+      className={`relative shrink-0 overflow-hidden rounded-[6px] bg-white shadow-sm ${
+        isBanner ? "h-[126px] w-[96px] p-1" : "h-[56px] w-[42px] p-0.5"
       }`}
     >
       <Image
-        src={certificationCard}
+        src={certificateTemplate}
         alt={`${courseTitle} Certificate`}
         fill
-        sizes={isBanner ? "130px" : "82px"}
+        sizes={isBanner ? "96px" : "42px"}
         className="object-contain"
       />
     </div>

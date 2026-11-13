@@ -329,47 +329,6 @@ export default function CertificateScreen({
           {/* Dynamic Raining Confetti Shower from the top */}
           <RainingConfetti triggerKey={confettiTrigger} particleCount={150} />
 
-          {/* Top Bar: Return to Certificates List + Course Switcher Pills */}
-          <div className="mb-4 flex w-full max-w-[720px] flex-wrap items-center justify-between gap-3 px-2">
-            <button
-              type="button"
-              onClick={() => setView("list")}
-              className="inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-[#8FF9D1] bg-[#E1F8EC] px-3.5 py-1.5 text-xs font-semibold text-[#154535] transition-all hover:bg-[#d0f5e3]"
-            >
-              <span aria-hidden="true">‹</span>
-              <span>All Certificates</span>
-            </button>
-
-            {/* Completed Courses Pills Switcher (Clicking rains down confetti!) */}
-            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-              {EARNED_CERTIFICATES.map((cert) => {
-                const isSelected = cert.id === selectedCert.id;
-                return (
-                  <button
-                    key={cert.id}
-                    type="button"
-                    onClick={() => handleSelectCourseAndCelebrate(cert)}
-                    aria-label={`View certificate and rain confetti for ${cert.shortLabel}`}
-                    className={`inline-flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-semibold transition-all duration-200 active:scale-95 ${
-                      isSelected
-                        ? "bg-[#154535] text-white shadow-xs ring-2 ring-[#31CA92]/50"
-                        : "border border-[#8FF9D1] bg-[#E1F8EC]/85 text-[#154535] hover:bg-[#d0f6e4]"
-                    }`}
-                  >
-                    <span
-                      className={`flex h-3 w-3 items-center justify-center rounded-full text-[9px] ${
-                        isSelected ? "bg-white/20 text-white" : "bg-[#31CA92] text-white"
-                      }`}
-                    >
-                      ✓
-                    </span>
-                    <span>{cert.shortLabel}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
           {/* Award Medal Badge Icon (Using user-uploaded badge image) */}
           <div
             onClick={triggerRainShower}
