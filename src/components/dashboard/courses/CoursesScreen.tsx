@@ -6,7 +6,15 @@ import CoursePlayer from "./CoursePlayer";
 import MyCourseCard from "./MyCourseCard";
 import { continueLearningCourse, myCourses, type Course } from "./coursesData";
 
-const categories = ["All Categories", "AI Engineering", "Growth", "Creative"];
+const categories = [
+  "All Categories",
+  "Software Engineering",
+  "Product Management",
+  "Marketing",
+  "Automation",
+  "Creative Direction",
+  "Regional Impact",
+];
 const sorts = ["Sort By Recent", "Sort By Title"];
 
 export default function CoursesScreen() {

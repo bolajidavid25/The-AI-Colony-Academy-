@@ -143,8 +143,12 @@ export default function CohortsScreen() {
             style={{ backgroundColor: "#F9F9F9", color: "#A0A5B0" }}
           >
             <option>All Courses</option>
-            <option>AI Engineering</option>
-            <option>AI Marketing</option>
+            <option>AI for Software Engineering</option>
+            <option>AI for Product Management</option>
+            <option>AI for Marketing</option>
+            <option>AI Automation</option>
+            <option>AI for StoryTelling</option>
+            <option>AI for African Use Cases</option>
           </select>
           <span className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2" style={{ color: "#A0A5B0" }}>
             <ChevronDownIcon />

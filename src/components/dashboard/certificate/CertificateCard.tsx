@@ -8,7 +8,7 @@ interface CertificateCardProps {
 }
 
 export default function CertificateCard({
-  courseTitle = "Advanced AI Marketing Course",
+  courseTitle = "AI for Software Engineering",
   onPreviewClick,
 }: CertificateCardProps) {
   return (

@@ -7,7 +7,7 @@ interface CertificatePreviewGraphicProps {
 }
 
 export default function CertificatePreviewGraphic({
-  courseTitle = "AI Engineering",
+  courseTitle = "AI for Software Engineering",
   variant = "thumb",
 }: CertificatePreviewGraphicProps) {
   if (variant === "full") {

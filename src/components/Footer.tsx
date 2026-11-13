@@ -6,10 +6,11 @@ import cpdBadge from "../assets/footer-images/image 33.png";
 import badge  from "../assets/footer-images/logo.png";
 
 const courses = [
-  "AI for Marketers",
-  "AI for Founders",
-  "Prompt Engineering",
-  "AI Filmmaking and Storytelling",
+  "AI for Software Engineering",
+  "AI for Product Management",
+  "AI for Marketing",
+  "AI Automation",
+  "AI for StoryTelling",
   "AI for African Use Cases",
 ];
 

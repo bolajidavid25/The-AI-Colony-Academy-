@@ -27,7 +27,7 @@ interface CertificateScreenProps {
 
 export default function CertificateScreen({
   recipientName = "Jermaine Doe",
-  courseName = "Advanced AI Marketing Course",
+  courseName = "AI for Software Engineering",
   initialView = "list",
 }: CertificateScreenProps) {
   const [view, setView] = useState<"list" | "celebration">(initialView);

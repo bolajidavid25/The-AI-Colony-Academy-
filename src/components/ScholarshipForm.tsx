@@ -3,10 +3,11 @@
 import { ChangeEvent, FormEvent, useRef, useState } from "react";
 
 const courseOptions = [
-  "Ai Market",
-  "AI for Founders",
-  "Prompt Engineering for Real Work",
-  "AI Filmmaking and Storytelling",
+  "AI for Software Engineering",
+  "AI for Product Management",
+  "AI for Marketing",
+  "AI Automation",
+  "AI for StoryTelling",
   "AI for African Use Cases",
 ];
 
@@ -21,7 +22,7 @@ type FormState = {
 const initialFormState: FormState = {
   fullName: "",
   email: "",
-  course: "Ai Market",
+  course: "AI for Software Engineering",
   motivation: "",
   workSamples: null,
 };

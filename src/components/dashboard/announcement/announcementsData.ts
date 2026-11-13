@@ -44,7 +44,7 @@ export const INITIAL_ANNOUNCEMENTS: AnnouncementItem[] = [
     categoryColor: "#FF5D2A",
     timeAgo: "2 days ago",
     title: "New module Added: AI Agent Memory",
-    description: "A new module has been added to the AI engineering course",
+    description: "A new module has been added to the AI for Software Engineering course",
     extendedText:
       "Module 5 covers working memory buffers, vector retrieval embeddings, and durable semantic storage across agent execution loops. Now available with code walkthroughs.",
     iconType: "book",

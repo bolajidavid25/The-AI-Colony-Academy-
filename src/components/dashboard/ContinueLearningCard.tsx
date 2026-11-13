@@ -5,7 +5,7 @@ export default function ContinueLearningCard() {
         Continue Learning 
       </p>
       <p className="text-xs font-semibold tracking-wide text-[#154535] uppercase">
-        AI Engineering
+        AI for Software Engineering
       </p>
       <p className="mt-2 text-sm text-[#154535]">Module 5</p>
       <h2 className="mt-1 max-w-[280px] text-[26px] font-bold leading-tight text-[#154535]">

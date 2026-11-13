@@ -88,7 +88,7 @@ export const INITIAL_ASSIGNMENTS: AssignmentItem[] = [
   {
     id: "asg-1",
     title: "Create An AI Customer Support agent",
-    courseModule: "AI Engineering - Module 4",
+    courseModule: "AI for Software Engineering - Module 4",
     dueIn: "3 days",
     dueDate: "July 10, 2026. 11:00AM",
     dueTimestamp: new Date("2026-07-10T11:00:00").getTime(),
@@ -101,7 +101,7 @@ export const INITIAL_ASSIGNMENTS: AssignmentItem[] = [
   {
     id: "asg-2",
     title: "Create An AI Customer Support agent",
-    courseModule: "AI Engineering - Module 4",
+    courseModule: "AI for Software Engineering - Module 4",
     dueIn: "3 days",
     dueDate: "July 10, 2026. 11:00AM",
     dueTimestamp: new Date("2026-07-10T11:00:00").getTime(),
@@ -121,7 +121,7 @@ export const INITIAL_ASSIGNMENTS: AssignmentItem[] = [
   {
     id: "asg-3",
     title: "Create An AI Customer Support agent",
-    courseModule: "AI Engineering - Module 4",
+    courseModule: "AI for Software Engineering - Module 4",
     dueIn: "3 days",
     dueDate: "July 10, 2026. 11:00AM",
     dueTimestamp: new Date("2026-07-10T11:00:00").getTime(),
@@ -141,7 +141,7 @@ export const INITIAL_ASSIGNMENTS: AssignmentItem[] = [
   {
     id: "asg-4",
     title: "Create An AI Customer Support agent",
-    courseModule: "AI Engineering - Module 4",
+    courseModule: "AI for Software Engineering - Module 4",
     dueIn: "3 days",
     dueDate: "July 10, 2026. 11:00AM",
     dueTimestamp: new Date("2026-07-10T11:00:00").getTime(),
@@ -170,7 +170,7 @@ export const INITIAL_ASSIGNMENTS: AssignmentItem[] = [
   {
     id: "asg-5",
     title: "Create An AI Customer Support agent",
-    courseModule: "AI Engineering - Module 4",
+    courseModule: "AI for Software Engineering - Module 4",
     dueIn: "3 days",
     dueDate: "July 10, 2026. 11:00AM",
     dueTimestamp: new Date("2026-07-10T11:00:00").getTime(),
@@ -183,7 +183,7 @@ export const INITIAL_ASSIGNMENTS: AssignmentItem[] = [
   {
     id: "asg-6",
     title: "Create An AI Customer Support agent",
-    courseModule: "AI Engineering - Module 4",
+    courseModule: "AI for Software Engineering - Module 4",
     dueIn: "3 days",
     dueDate: "July 10, 2026. 11:00AM",
     dueTimestamp: new Date("2026-07-10T11:00:00").getTime(),
@@ -205,7 +205,7 @@ export const INITIAL_ASSIGNMENTS: AssignmentItem[] = [
   {
     id: "asg-7",
     title: "Create An AI Customer Support agent",
-    courseModule: "AI Engineering - Module 4",
+    courseModule: "AI for Software Engineering - Module 4",
     dueIn: "3 days",
     dueDate: "July 10, 2026. 11:00AM",
     dueTimestamp: new Date("2026-07-10T11:00:00").getTime(),
@@ -234,7 +234,7 @@ export const INITIAL_ASSIGNMENTS: AssignmentItem[] = [
   {
     id: "asg-8",
     title: "Create An AI Customer Support agent",
-    courseModule: "AI Engineering - Module 4",
+    courseModule: "AI for Software Engineering - Module 4",
     dueIn: "3 days",
     dueDate: "July 10, 2026. 11:00AM",
     dueTimestamp: new Date("2026-07-10T11:00:00").getTime(),
@@ -247,7 +247,7 @@ export const INITIAL_ASSIGNMENTS: AssignmentItem[] = [
   {
     id: "asg-9",
     title: "Create An AI Customer Support agent",
-    courseModule: "AI Engineering - Module 4",
+    courseModule: "AI for Software Engineering - Module 4",
     dueIn: "3 days",
     dueDate: "July 10, 2026. 11:00AM",
     dueTimestamp: new Date("2026-07-10T11:00:00").getTime(),
@@ -260,7 +260,7 @@ export const INITIAL_ASSIGNMENTS: AssignmentItem[] = [
   {
     id: "asg-10",
     title: "Create An AI Customer Support agent",
-    courseModule: "AI Engineering - Module 4",
+    courseModule: "AI for Software Engineering - Module 4",
     dueIn: "3 days",
     dueDate: "July 10, 2026. 11:00AM",
     dueTimestamp: new Date("2026-07-10T11:00:00").getTime(),
@@ -289,7 +289,7 @@ export const INITIAL_ASSIGNMENTS: AssignmentItem[] = [
   {
     id: "asg-11",
     title: "Create An AI Customer Support agent",
-    courseModule: "AI Engineering - Module 4",
+    courseModule: "AI for Software Engineering - Module 4",
     dueIn: "3 days",
     dueDate: "July 10, 2026. 11:00AM",
     dueTimestamp: new Date("2026-07-10T11:00:00").getTime(),
@@ -309,7 +309,7 @@ export const INITIAL_ASSIGNMENTS: AssignmentItem[] = [
   {
     id: "asg-12",
     title: "Create An AI Customer Support agent",
-    courseModule: "AI Engineering - Module 4",
+    courseModule: "AI for Software Engineering - Module 4",
     dueIn: "3 days",
     dueDate: "July 10, 2026. 11:00AM",
     dueTimestamp: new Date("2026-07-10T11:00:00").getTime(),
